@@ -115,7 +115,7 @@
 <section class="banner" id="section-2" style="background-image: url('{{ Storage::url($event->image_bottom) }}')">
     <div class="mask movil-grid"></div>
     <div class="content-flex container">
-        <div class="column-a left">
+        <div class="column-a">
             <div class="event">
                 <div class="accordion card-accordion" id="accordionExample">
                     <div class="card">
@@ -160,6 +160,7 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
+
                                 {{ $event->contact_email }}
                                 {{ $event->contact_phone }}
                             </div>

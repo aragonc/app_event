@@ -74,9 +74,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
 }
-.left{
-    display: none;
-}
+
 footer{
     color: #fff;
     background: transparent;
