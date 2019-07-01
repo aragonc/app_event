@@ -1,0 +1,232 @@
+main{
+    background: #000000;
+}
+.logo{
+    width: 200px;
+}
+.logo_des{
+    width: 100%;
+    display: inline-block;
+}
+header {
+    padding: 20px;
+    text-align: center;
+    height: 100px;
+}
+.banner{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.mask{
+    position: absolute;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.container {
+    padding: 0px;
+}
+.column-b{
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - 100px);
+    position: relative;
+    color: #ffffff;
+    align-items: flex-end;
+    padding: 0px 10px;
+}
+.event{
+    width: 100%;
+}
+.column-a {
+    padding: 100px 20px;
+    background-color: #000;
+}
+.card-register{
+    background-color: transparent;
+    border: none;
+}
+.card-register label{
+    font-size: 14px;
+}
+.form-register{
+    background-color: rgb(30, 47, 70);
+    padding: 10px;
+    color: #FFFFFF;
+}
+.bottom-benefits{
+    position: relative;
+    font-size: 13px;
+    background-color: #FF5C00;
+    display: inline-block;
+    line-height: 3em;
+    padding: 0px 15px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+.bottom-benefits::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #FF5C00;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.left{
+    display: none;
+}
+footer{
+    color: #fff;
+    background: #0c4182;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 14px;
+    font-size: 11px;
+}
+.card-accordion{
+    width: 100%;
+    display: inline-block;
+}
+.card-accordion .card{
+    background: rgba(19, 36, 98, 0.8);
+    color: #FFFFFF;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: -6px;
+}
+.card-accordion .card .card-header{
+    background: #132462;
+}
+.card-accordion .card .card-header .btn-link{
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+.card-accordion .card .card-header .btn-link .fa{
+    color: #00bcd4;
+}
+.event .subtitle{
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.event .title{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.event .date{
+    background-color: #132462;
+    color: #FFFFFF;
+    padding: .4rem 1rem;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+}
+.event .direction{
+    background-color: #FF5C00;
+    color: #FFFFFF;
+    padding: .4rem 1rem;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+}
+.btn-primary{
+    background-color: #FF5C00;
+    border: 1px solid #FF5C00;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-primary:hover{
+    background-color: #ff4800;
+    border: 1px solid #ff4800;
+}
+.terms{
+    font-size: 12px;
+    margin-top: 1rem;
+}
+.logo-school{
+    background: #000000;
+    padding: 10px 20px;
+}
+@media (min-width: 1024px){
+    /*.banner{
+        background-image: url(images/fondo.jpg);
+    }
+    #section-2.banner{
+        background-image: url(images/fondo2.jpg);
+    }*/
+    .mask{
+        height: 100vh;
+        background-color: rgba(0, 34, 97, 0.6);
+        background-image: none;
+    }
+    header {
+        display: none;
+    }
+    .content-flex {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .column-b {
+        width: 40%;
+        order: 1;
+        align-items: center;
+        position: static;
+        justify-content: flex-end;
+    }
+    .event{
+        width: auto;
+    }
+    .column-a {
+        background-color: transparent;
+        padding: 0px 20px;
+        display: block;
+        height: auto;
+        width: 60%;
+    }
+    .form-static{
+        position: fixed;
+        z-index: 8;
+        top: 50%;
+        width: 400px;
+        transform: translateY(-50%);
+    }
+    .form-register{
+        width: 100%;
+        margin: auto;
+    }
+    .bottom-benefits{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        margin: 30px 0px;
+        cursor: pointer;
+        color: #fff;
+    }
+    .movil-grid{
+        display: block;
+        background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+    .left{
+        display: flex;
+        justify-content: center;
+    }
+}

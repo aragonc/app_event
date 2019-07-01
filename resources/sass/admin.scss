@@ -1,0 +1,13 @@
+//Add Style Admin Dashboard
+$fa-font-path: "~font-awesome/fonts";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "~cropper/dist/cropper.min.css";
+@import "~gijgo/css/gijgo.css";
+//@import "~sweetalert2/dist/sweetalert2.min.css";
+@import 'admin/style';
+
+.actions{
+  form{
+    display: inline-block;
+  }
+}
