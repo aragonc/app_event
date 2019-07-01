@@ -50,19 +50,19 @@ class CategoryController extends Controller
         if($request->hasFile('image')){
 
             $file = $request->file('image');
-            $name = time().'_school_'.$file->getClientOriginalName();
+            $name = time().'_category_'.$file->getClientOriginalName();
 
             $image = Image::make($file->getRealPath());
             if($image->getWidth() == '425' and $image->getHeight() == '90'){
                 $image->save();
-                $pathFile = $file->storeAs('public/upload/school',$name);
-                $category = Category::create($request->all());
-                $category->fill(['image' => $pathFile])->save();
-                return redirect()->route('category.edit', $category->id)->with('info','El anuncio fue creado con éxito');
+                $pathFile = $file->storeAs('public/upload/category',$name);
             } else {
                 return back()->with('info','Debe de seleccionar una imagen de 425 x 90');
             }
         }
+        $category = Category::create($request->all());
+        $category->fill(['image' => $pathFile])->save();
+        return redirect()->route('category.edit', $category->id)->with('info','El anuncio fue creado con éxito');
     }
 
     /**
@@ -99,9 +99,25 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
+        $pathFile = null;
+
+        if($request->hasFile('image')){
+
+            $file = $request->file('image');
+            $name = time().'_category_'.$file->getClientOriginalName();
+
+            $image = Image::make($file->getRealPath());
+            if($image->getWidth() == '425' and $image->getHeight() == '90'){
+                $image->save();
+                $pathFile = $file->storeAs('public/upload/category',$name);
+            } else {
+                return back()->with('info','Debe de seleccionar una imagen de 425 x 90');
+            }
+        }
 
         $category->fill($request->all())->save();
-
+        $category->fill(['image' => $pathFile])->save();
+        
         return redirect()->route('category.edit', $category->id)->with('info','El anuncio fue actualizado con éxito');
     }
 

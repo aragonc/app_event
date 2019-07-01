@@ -27,7 +27,7 @@
 </main>
 
 <footer>
-    © Todos los Derechos Reservados 2019 Grupo Excellentia | Celular / WhatsApp:  +51 962187672 | informes@grupoexcelencia.org
+    © Todos los Derechos Reservados 2019
 </footer>
 
 <!-- Modal Terms -->

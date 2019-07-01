@@ -49,16 +49,16 @@ class EventController extends Controller
     {
         $pathFile = null;
 
-        if($request->hasFile('background_top')){
+        if($request->hasFile('image_top')){
 
-            $file = $request->file('background_top');
+            $file = $request->file('image_top');
             $name = time().'_event_'.$file->getClientOriginalName();
             $image = Image::make($file->getRealPath());
             $image->save();
             $pathFile = $file->storeAs('public/upload/event',$name);
         }
         $event = Event::create($request->all());
-        $event->fill(['background_top' => $pathFile])->save();
+        $event->fill(['image_top' => $pathFile])->save();
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue creado con éxito');
 
     }
@@ -103,25 +103,25 @@ class EventController extends Controller
         if($request->has('delete_top')){
             $delete = $event->background_top;
             unlink(storage_path('app/'.$delete));
-            $event->fill(['background_top' => null])->save();
+            $event->fill(['image_top' => null])->save();
         }
 
         if($request->has('delete_bottom')){
             $delete2 = $event->background_bottom;
             unlink(storage_path('app/'.$delete2));
-            $event->fill(['background_bottom' => null])->save();
+            $event->fill(['image_bottom' => null])->save();
         }
 
-        if($request->hasFile('background_top')){
-            $file = $request->file('background_top');
+        if($request->hasFile('image_top')){
+            $file = $request->file('image_top');
             $name = time().'_event_'.$file->getClientOriginalName();
             $image = Image::make($file->getRealPath());
             $image->save();
             $pathFile = $file->storeAs('public/upload/event',$name);
         }
 
-        if($request->hasFile('background_bottom')){
-            $file2 = $request->file('background_bottom');
+        if($request->hasFile('image_bottom')){
+            $file2 = $request->file('image_bottom');
             $name2 = time().'_event_'.$file2->getClientOriginalName();
             $image2 = Image::make($file2->getRealPath());
             $image2->save();
@@ -129,7 +129,7 @@ class EventController extends Controller
         }
 
         $event->fill($request->all())->save();
-        $event->fill(['background_top' => $pathFile, 'background_bottom' => $pathFile2])->save();
+        $event->fill(['image_top' => $pathFile, 'image_bottom' => $pathFile2])->save();
 
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue actualizado con éxito');
     }

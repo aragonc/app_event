@@ -2,6 +2,7 @@
 <div class="row">
     <div class="col-md-8">
         <div class="form-group">
+            <span class="form-required">*</span>
             {{ Form::label('name', 'Nombre') }}
             {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
         </div>

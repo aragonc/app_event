@@ -25,9 +25,19 @@
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->name }}</td>
-                    <td>{!! $item->description !!}</td>
                     <td>
-                        <img width="250px" src="{{ Storage::url($item->image) }}"  class="img-fluid"/>
+                        @if($item->description)
+                            {!! $item->description !!}
+                        @else
+                            Sin descripción
+                        @endif
+                    </td>
+                    <td>
+                        @if($item->image)
+                            <img width="250px" src="{{ Storage::url($item->image) }}"  class="img-fluid"/>
+                        @else
+                            No asignado
+                        @endif
                     </td>
 
                     <td>{{ $item->created_at }}</td>

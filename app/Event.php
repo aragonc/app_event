@@ -14,9 +14,13 @@ class Event extends Model
         'place',
         'thematic',
         'schedule',
-        'contact',
-        'background_top',
-        'background_bottom',
+        'contact_email',
+        'contact_phone',
+        'image_top',
+        'image_bottom',
+        'primary_color',
+        'secondary_color',
+        'embed',
         'status'
     ];
     public function category(){

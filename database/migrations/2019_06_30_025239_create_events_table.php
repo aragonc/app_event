@@ -18,15 +18,18 @@ class CreateEventsTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('slug')->unique()->nullable(); //Url Amigable
             $table->string('title');
-            $table->string('subtitle')->nullable();
             $table->string('date')->nullable();
             $table->string('place')->nullable();
             $table->mediumText('thematic')->nullable();
             $table->mediumText('schedule')->nullable();
-            $table->mediumText('contact')->nullable();
-            $table->string('background_top',250)->nullable();
-            $table->string('background_bottom', 250)->nullable();
-            $table->enum('status',['publicado','borrador'])->default('borrador');
+            $table->mediumText('contact_email')->nullable();
+            $table->mediumText('contact_phone')->nullable();
+            $table->string('image_top',250)->nullable();
+            $table->string('image_bottom', 250)->nullable();
+            $table->string('primary_color')->nullable();
+            $table->string('secondary_color')->nullable();
+            $table->mediumText('embed')->nullable();
+            $table->enum('status',['published','draft'])->default('draft');
             $table->timestamps();
 
             $table->foreign('category_id')

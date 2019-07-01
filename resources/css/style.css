@@ -1,15 +1,11 @@
 main{
     background: #000000;
 }
-.logo{
-    width: 200px;
-}
 .logo_des{
     width: 100%;
     display: inline-block;
 }
 header {
-    padding: 20px;
     text-align: center;
     height: 100px;
 }
@@ -157,9 +153,9 @@ footer{
     font-size: 12px;
     margin-top: 1rem;
 }
-.logo-school{
-    background: #000000;
-    padding: 10px 20px;
+.logo-category{
+    background: #ffffff;
+    padding: 0;
 }
 @media (min-width: 1024px){
     /*.banner{

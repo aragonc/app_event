@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="banner" id="section-1" style="background-image: url('{{ Storage::url($event->background_top) }}')">
+<section class="banner" id="section-1" style="background-image: url('{{ Storage::url($event->image_top) }}')">
     <div class="mask"></div>
     <div class="content-flex container">
         <div class="column-a">
@@ -25,7 +25,7 @@
         </div>
         <div class="column-b">
             <div class="form-static">
-                <div class="logo-school">
+                <div class="logo-category">
                     <img src="{{ Storage::url($event->category->image) }}" alt="" class="logo_des">
                 </div>
                 <div class="form-register">
@@ -53,7 +53,7 @@
                                 <div class="form-group form-check">
                                     <input type="checkbox" value="yes" class="form-check-input" name="authorize" id="authorize">
                                     <label class="form-check-label" for="authorize">
-                                        Autorizo a Grupo Excelencia utilizar datos para los fines
+                                        Autorizo a utilizar datos para los fines
                                         mencionados.
                                     </label>
                                 </div>
@@ -79,7 +79,7 @@
 
     </div>
 </section>
-<section class="banner" id="section-2" style="background-image: url('{{ Storage::url($event->background_bottom) }}')">
+<section class="banner" id="section-2" style="background-image: url('{{ Storage::url($event->image_bottom) }}')">
     <div class="mask movil-grid"></div>
     <div class="content-flex container">
         <div class="column-a left">
