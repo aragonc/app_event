@@ -21,7 +21,7 @@ header {
     background-position: center;
 }
 .container {
-    padding: 0px;
+    padding: 0;
 }
 .column-b{
     display: flex;
@@ -30,14 +30,14 @@ header {
     position: relative;
     color: #ffffff;
     align-items: flex-end;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 .event{
     width: 100%;
 }
 .column-a {
     padding: 100px 20px;
-    background-color: #000;
+    background-color: transparent;
 }
 .card-register{
     background-color: transparent;
@@ -54,7 +54,7 @@ header {
 .bottom-benefits{
     position: relative;
     font-size: 13px;
-    background-color: #FF5C00;
+    background-color: transparent;
     display: inline-block;
     line-height: 3em;
     padding: 0px 15px;
@@ -70,7 +70,7 @@ header {
     position: absolute;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 15px solid #FF5C00;
+    border-top: 15px solid transparent;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -79,7 +79,7 @@ header {
 }
 footer{
     color: #fff;
-    background: #0c4182;
+    background: transparent;
     outline: none;
     border: none;
     text-align: center;
@@ -98,7 +98,7 @@ footer{
     margin-bottom: -6px;
 }
 .card-accordion .card .card-header{
-    background: #132462;
+    background: transparent;
 }
 .card-accordion .card .card-header .btn-link{
     text-transform: uppercase;
@@ -124,7 +124,7 @@ footer{
     font-weight: bold;
 }
 .event .date{
-    background-color: #132462;
+    background-color: transparent;
     color: #FFFFFF;
     padding: .4rem 1rem;
     display: inline-block;
@@ -132,7 +132,7 @@ footer{
     font-size: 1.5rem;
 }
 .event .direction{
-    background-color: #FF5C00;
+    background-color: transparent;
     color: #FFFFFF;
     padding: .4rem 1rem;
     display: inline-block;
@@ -140,14 +140,14 @@ footer{
     font-size: 1.5rem;
 }
 .btn-primary{
-    background-color: #FF5C00;
-    border: 1px solid #FF5C00;
+    background-color: transparent;
+    border: 1px solid transparent;
     text-transform: uppercase;
     font-weight: bold;
 }
 .btn-primary:hover{
-    background-color: #ff4800;
-    border: 1px solid #ff4800;
+    background-color: transparent;
+    border: 1px solid transparent;
 }
 .terms{
     font-size: 12px;

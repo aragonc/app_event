@@ -1,5 +1,35 @@
 @extends('layouts.view')
 
+@section('css')
+    <style type="text/css">
+        .form-register{
+            background-color: {{ $event->primary_color }};
+        }
+        .event .date{
+            background-color: {{ $event->primary_color }};
+        }
+        .card-accordion .card .card-header{
+            background: {{ $event->primary_color }};
+        }
+        footer{
+            background: {{ $event->primary_color }};
+        }
+        .event .direction{
+            background-color: {{ $event->secondary_color }};
+        }
+        .btn-primary{
+            background-color: {{ $event->secondary_color }};
+            border-color: {{ $event->secondary_color }};
+        }
+        .bottom-benefits{
+            background-color: {{ $event->secondary_color }};
+        }
+        .bottom-benefits::after{
+            border-top-color: {{ $event->secondary_color }};
+        }
+    </style>
+@endsection
+
 @section('page_title')
     Dashboard
 @endsection
