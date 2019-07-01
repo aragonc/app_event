@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('page_title')
-    Editar escuela académica
+    Editar categoria
 @endsection
 @section('content')
     @if (Session::has('message'))

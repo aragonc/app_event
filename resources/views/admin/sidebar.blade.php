@@ -1,16 +1,16 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-sidebar sidebar sidebar-dark accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
-        <div class="sidebar-logo-large">
+        {{--<div class="sidebar-logo-large">
             <img width="150px" src="{{ asset('img/logo.svg') }}">
         </div>
         <div class="sidebar-logo-mini">
             <img width="55px" src="{{ asset('img/logo_mini.svg') }}">
-        </div>
-        {{--<div class="sidebar-brand-icon rotate-n-15">
+        </div>--}}
+        <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Tunqui</div>--}}
+        <div class="sidebar-brand-text mx-3">App Event</div>
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item">

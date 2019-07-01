@@ -2,9 +2,9 @@
 <div class="row">
     <div class="col-md-8">
         <div class="form-group">
-            {{ Form::label('category_id', 'Escuela') }}
+            {{ Form::label('category_id', 'Categoria') }}
             <select name="category_id" id="category_id" class="custom-select">
-                <option> --- Escoge una escuela ----</option>
+                <option> --- Escoge una categoria ----</option>
                 @if(isset($event))
                     @foreach($categories as $item)
                         <option {{ $event->category_id == $item->id ? "selected" : "" }} value="{{ $item->id }}"> {{ $item->name }}</option>

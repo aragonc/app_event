@@ -4,7 +4,7 @@
 @endsection
 
 @section('page_title')
-    Crear escuela académica
+    Crear categoria
 @endsection
 @section('content')
 

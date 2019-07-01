@@ -21,9 +21,9 @@
         <div class="col-md-2">
             <div class="tool">
                 <a href="{{ route('category.index') }}">
-                    <img width="64px" src="{{ asset('img/svg/school.svg') }}" class="tool-icon">
+                    <img width="64px" src="{{ asset('img/svg/folder.svg') }}" class="tool-icon">
                     <h6 class="tool-title">
-                        Escuela
+                        Categoria
                     </h6>
                 </a>
             </div>
@@ -31,9 +31,9 @@
         <div class="col-md-2">
             <div class="tool">
                 <a href="{{ route('client.index') }}">
-                    <img width="64px" src="{{ asset('img/svg/clients.svg') }}" class="tool-icon">
+                    <img width="64px" src="{{ asset('img/svg/person.svg') }}" class="tool-icon">
                     <h6 class="tool-title">
-                        Clientes
+                        Registros
                     </h6>
                 </a>
             </div>

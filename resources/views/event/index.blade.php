@@ -4,7 +4,7 @@
 @endsection
 @section('actions')
     <a href="{{ route('event.create') }}" class="btn btn-success btn-sm">
-        <i class="fas fa-plus"></i> Agregar Evento
+        <i class="fas fa-plus"></i> Agregar
     </a>
 @endsection
 @section('content')

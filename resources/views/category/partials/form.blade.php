@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-8">
         <div class="form-group">
-            {{ Form::label('name', 'Nombre de la Escuela') }}
+            {{ Form::label('name', 'Nombre') }}
             {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
         </div>
         <div class="form-group">
@@ -17,7 +17,7 @@
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            {{ Form::label('image', 'Cargar imagen de anuncio') }}
+            {{ Form::label('image', 'Cargar imagen') }}
             <div class="custom-file">
                 {{ Form::file('image', ['class' => '', 'id' => 'image_upload']) }}
             </div>

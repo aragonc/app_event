@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('page_title')
-    Lista de escuelas académicas
+    Lista de categorias
 @endsection
 @section('actions')
     <a href="{{ route('category.create') }}" class="btn btn-success btn-sm">
-        <i class="fas fa-plus"></i> Agregar Escuela
+        <i class="fas fa-plus"></i> Agregar
     </a>
 @endsection
 @section('content')
