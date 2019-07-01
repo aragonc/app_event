@@ -5,7 +5,7 @@
         <div class="form-group">
             {{ Form::label('category_id', 'Categoria') }}
             <select name="category_id" id="category_id" class="custom-select">
-                <option> --- Escoge una categoria ----</option>
+                <option> ---- Escoge una categoria ---- </option>
                 @if(isset($event))
                     @foreach($categories as $item)
                         <option {{ $event->category_id == $item->id ? "selected" : "" }} value="{{ $item->id }}"> {{ $item->name }}</option>
@@ -54,13 +54,27 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
+                    @php
+                        if(isset($event)){
+                            $colorPrimary = ($event->primary_color === null) ? '#3e15b9' : $event->primary_color;
+                        } else {
+                            $colorPrimary = null;
+                        }
+                    @endphp
                     {{ Form::label('primary_color', 'Color primario') }}
-                    {{ Form::input('color','primary_color','#3e15b9', array('class' => 'form-control','id' => 'primary_color')) }}
+                    {{ Form::input('color','primary_color',$colorPrimary, array('class' => 'form-control','id' => 'primary_color')) }}
                 </div>
 
                 <div class="form-group">
+                    @php
+                        if(isset($event)){
+                            $colorSecondary = ($event->secondary_color === null) ? '#ff6c00' : $event->secondary_color;
+                        } else {
+                            $colorSecondary = null;
+                        }
+                    @endphp
                     {{ Form::label('secondary_color', 'Color secundario') }}
-                    {{ Form::input('color','secondary_color','#ff6c00', array('class' => 'form-control','id' => 'secondary_color')) }}
+                    {{ Form::input('color','secondary_color',$colorSecondary, array('class' => 'form-control','id' => 'secondary_color')) }}
                 </div>
 
             </div>

@@ -91,11 +91,11 @@ footer{
     display: inline-block;
 }
 .card-accordion .card{
-    background: rgba(19, 36, 98, 0.8);
-    color: #FFFFFF;
+    background: #ffffff;
     width: 100%;
     display: inline-block;
-    margin-bottom: -6px;
+    margin-bottom: -5px;
+    border: none;
 }
 .card-accordion .card .card-header{
     background: transparent;
@@ -108,9 +108,7 @@ footer{
     text-align: left;
     width: 100%;
 }
-.card-accordion .card .card-header .btn-link .fa{
-    color: #00bcd4;
-}
+
 .event .subtitle{
     color: #FFFFFF;
     text-transform: uppercase;

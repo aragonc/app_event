@@ -27,6 +27,9 @@
         .bottom-benefits::after{
             border-top-color: {{ $event->secondary_color }};
         }
+        .card-accordion .card .card-header .btn-link .fa{
+            color: {{ $event->secondary_color }};
+        }
     </style>
 @endsection
 
@@ -157,7 +160,8 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
-                                {!! $event->contact !!}
+                                {{ $event->contact_email }}
+                                {{ $event->contact_phone }}
                             </div>
                         </div>
                     </div>
