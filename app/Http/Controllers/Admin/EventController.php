@@ -48,17 +48,40 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $pathFile = null;
+        $pathFileTwo = null;
 
+        //Comprobamos que enviamos la imagen y que no este vacia
         if($request->hasFile('image_top')){
-
             $file = $request->file('image_top');
-            $name = time().'_event_'.$file->getClientOriginalName();
+
+            //comprobamos que la imagen tenga el tamaño correcto 1440 x 1024
             $image = Image::make($file->getRealPath());
-            $image->save();
-            $pathFile = $file->storeAs('public/upload/event',$name);
+            if($image->getWidth() != '1440' and $image->getHeight() !='1024'){
+                return back()->with('error','La imagen debe ser de 1440 x 1024 pixeles');
+            } else {
+                $name = time().'_event_'.$file->getClientOriginalName();
+                $pathFile = $file->storeAs('public/upload/event',$name);
+            }
         }
+
+        if($request->hasFile('image_bottom')){
+            $file2 = $request->file('image_bottom');
+
+            //comprobamos que la imagen tenga el tamaño correcto 1440 x 1024
+            $image2 = Image::make($file2->getRealPath());
+            if($image2->getWidth() != '1440' and $image2->getHeight() !='1024'){
+                return back()->with('error','La imagen debe ser de 1440 x 1024 pixeles');
+            } else {
+                $name2 = time().'_event_'.$file2->getClientOriginalName();
+                $pathFileTwo = $file2->storeAs('public/upload/event',$name2);
+            }
+        }
+
+        //Creamos el evento y agregamos la imagen al registro
         $event = Event::create($request->all());
         $event->fill(['image_top' => $pathFile])->save();
+        $event->fill(['image_bottom' => $pathFileTwo])->save();
+
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue creado con éxito');
 
     }
@@ -98,40 +121,71 @@ class EventController extends Controller
     {
         $pathFile = null;
         $pathFile2 = null;
+        $message =  null;
+
         $event = Event::find($id);
 
-        if($request->has('delete_top')){
-            $delete = $event->background_top;
-            unlink(storage_path('app/'.$delete));
-            $event->fill(['image_top' => null])->save();
+        //Verificamos que la image desea ser borrada
+        $deleteImage1 = $request->has('delete_top');
+        $deleteImage2 = $request->has('delete_bottom');
+
+        //Eliminamos la imagen superior o inferior
+        $deleted1 = $deleted2 = false;
+
+        if($deleteImage1){
+            $fullPath1 = $event->image_top;
+            $deleted1 = Storage::delete($fullPath1);
+            if($deleted1){
+                $event->fill(['image_top' => $pathFile])->save();
+            }
         }
 
-        if($request->has('delete_bottom')){
-            $delete2 = $event->background_bottom;
-            unlink(storage_path('app/'.$delete2));
-            $event->fill(['image_bottom' => null])->save();
+        if($deleteImage2){
+            $fullPath2 = $event->image_bottom;
+            $deleted2 = Storage::delete($fullPath2);
+            if($deleted2){
+                $event->fill(['image_bottom' => $pathFile2])->save();
+            }
+        }
+        if($deleted1 or $deleted2){
+            return back()->with('info','La imagen fue eliminada');
         }
 
+        // Imagen top carga y registro en base de datos
         if($request->hasFile('image_top')){
             $file = $request->file('image_top');
-            $name = time().'_event_'.$file->getClientOriginalName();
+
+            // Comprobamos que tenga el tamaño correcto
             $image = Image::make($file->getRealPath());
-            $image->save();
-            $pathFile = $file->storeAs('public/upload/event',$name);
+            if($image->getWidth() != '1440' and $image->getHeight() !='1024'){
+                return back()->with('error','La imagen debe ser de 1440 x 1024 pixeles');
+            } else {
+                $name = time().'_event_'.$file->getClientOriginalName();
+                $pathFile = $file->storeAs('public/upload/event',$name);
+
+                //$event->fill($request->all())->save();
+                $event->fill(['image_top' => $pathFile])->save();
+            }
         }
 
         if($request->hasFile('image_bottom')){
             $file2 = $request->file('image_bottom');
-            $name2 = time().'_event_'.$file2->getClientOriginalName();
+
+            // Comprobamos que tenga el tamaño correcto
             $image2 = Image::make($file2->getRealPath());
-            $image2->save();
-            $pathFile2 = $file2->storeAs('public/upload/event',$name2);
+            if($image2->getWidth() != '1440' and $image2->getHeight() !='1024'){
+                return back()->with('error','La imagen debe ser de 1440 x 1024 pixeles');
+            } else {
+                $name2 = time().'_event_'.$file2->getClientOriginalName();
+                $pathFile2 = $file2->storeAs('public/upload/event',$name2);
+
+                //$event->fill($request->all())->save();
+                $event->fill(['image_bottom' => $pathFile2])->save();
+            }
         }
 
-        $event->fill($request->all())->save();
-        $event->fill(['image_top' => $pathFile, 'image_bottom' => $pathFile2])->save();
-
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue actualizado con éxito');
+
     }
 
     /**

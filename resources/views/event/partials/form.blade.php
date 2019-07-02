@@ -105,12 +105,16 @@
     <div class="col-md-4">
 
         @if(isset($event->image_top))
-            <div class="image-event">
-                <img src="{{ Storage::url($event->image_top) }}"  class="img-fluid"/>
-            </div>
-            <div class="form-group form-check">
-                <input name="delete_top" type="checkbox" value="true" class="form-check-input" id="delete_image_top">
-                <label class="form-check-label" for="delete_image_top">Eliminar esta imagen</label>
+            <div class="card card-image">
+                <div class="card-body">
+                    <div class="image-event">
+                        <img src="{{ Storage::url($event->image_top) }}"  class="img-fluid"/>
+                    </div>
+                    <div class="form-group form-check check-delete">
+                        <input name="delete_top" type="checkbox" value="true" class="form-check-input" id="delete_image_top">
+                        <label class="form-check-label" for="delete_image_top">Eliminar esta imagen</label>
+                    </div>
+                </div>
             </div>
         @else
             <div class="form-group">
@@ -122,12 +126,16 @@
         @endif
 
         @if(isset($event->image_bottom))
-            <div class="image-event">
-                <img src="{{ Storage::url($event->image_bottom) }}"  class="img-fluid"/>
-            </div>
-            <div class="form-group form-check">
-                <input name="delete_bottom" type="checkbox" value="true" class="form-check-input" id="delete_image_bottom">
-                <label class="form-check-label" for="delete_image_bottom">Eliminar esta imagen</label>
+            <div class="card card-image">
+                <div class="card-body">
+                    <div class="image-event">
+                        <img src="{{ Storage::url($event->image_bottom) }}"  class="img-fluid"/>
+                    </div>
+                    <div class="form-group form-check check-delete">
+                        <input name="delete_bottom" type="checkbox" value="true" class="form-check-input" id="delete_image_bottom">
+                        <label class="form-check-label" for="delete_image_bottom">Eliminar esta imagen</label>
+                    </div>
+                </div>
             </div>
         @else
             <div class="form-group">
@@ -137,7 +145,6 @@
                 </div>
             </div>
         @endif
-
 
     </div>
 </div>
