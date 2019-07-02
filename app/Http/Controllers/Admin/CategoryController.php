@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Resources;
 use Illuminate\Http\Request;
 
 //Load Files
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class CategoryController extends Controller
@@ -47,21 +49,25 @@ class CategoryController extends Controller
     {
         $pathFile = null;
 
+        //Comprobamos que enviamos la imagen y que no este vacia
+
         if($request->hasFile('image')){
-
             $file = $request->file('image');
-            $name = time().'_category_'.$file->getClientOriginalName();
 
+            // Comprobamos que tenga el tamaño correcto
             $image = Image::make($file->getRealPath());
-            if($image->getWidth() == '425' and $image->getHeight() == '90'){
-                $image->save();
-                $pathFile = $file->storeAs('public/upload/category',$name);
+            if($image->getWidth() != '425' and $image->getHeight() !='90'){
+                return back()->with('error','La imagen debe ser de 425 x 90 pixeles');
             } else {
-                return back()->with('info','Debe de seleccionar una imagen de 425 x 90');
+                $name = uniqid().'_category_'.$file->getClientOriginalName();
+                $pathFile = $file->storeAs('public/upload/category',$name);
             }
         }
+
+        //Crea la categoria y guarda la imagen en la base de datos
         $category = Category::create($request->all());
         $category->fill(['image' => $pathFile])->save();
+
         return redirect()->route('category.edit', $category->id)->with('info','El anuncio fue creado con éxito');
     }
 
@@ -101,17 +107,28 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $pathFile = null;
 
+        //Verificamos que la image desea ser borrada
+        $deleteImage = $request->has('delete_image');
+        if($deleteImage){
+            $fullPath = $category->image;
+            $deleted = Storage::delete($fullPath);
+            if($deleted){
+                $category->fill(['image' => $pathFile])->save();
+                return back()->with('info','La imagen fue eliminada');
+            }
+        }
+
+        //Comprobamos que se esta enviado una imagen
         if($request->hasFile('image')){
-
             $file = $request->file('image');
-            $name = time().'_category_'.$file->getClientOriginalName();
 
+            // Comprobamos que tenga el tamaño correcto
             $image = Image::make($file->getRealPath());
-            if($image->getWidth() == '425' and $image->getHeight() == '90'){
-                $image->save();
-                $pathFile = $file->storeAs('public/upload/category',$name);
+            if($image->getWidth() != '425' and $image->getHeight() !='90'){
+                return back()->with('error','La imagen debe ser de 425 x 90 pixeles');
             } else {
-                return back()->with('info','Debe de seleccionar una imagen de 425 x 90');
+                $name = uniqid().'_category_'.$file->getClientOriginalName();
+                $pathFile = $file->storeAs('public/upload/category',$name);
             }
         }
 

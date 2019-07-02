@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,7 +21,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('admin.dashboard', compact('user'));
+        $settings = Setting::all();
+        return view('admin.dashboard', compact(['user','settings']));
     }
 
 

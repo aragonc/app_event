@@ -1,6 +1,7 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-sidebar sidebar sidebar-dark accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin') }}">
+
         {{--<div class="sidebar-logo-large">
             <img width="150px" src="{{ asset('img/logo.svg') }}">
         </div>

@@ -17,19 +17,26 @@
 
     </div>
     <div class="col-md-4">
-        <div class="form-group">
-            {{ Form::label('image', 'Cargar imagen') }}
-            <div class="custom-file">
-                {{ Form::file('image', ['class' => '', 'id' => 'image_upload']) }}
-            </div>
-        </div>
 
         @if(isset($category->image))
-            <div class="image-announcement">
-                <img src="{{ Storage::url($category->image) }}"  class="img-fluid"/>
+            <div class="card card-image">
+                <div class="card-body">
+                    <div class="image-announcement">
+                        <img src="{{ Storage::url($category->image) }}"  class="img-fluid"/>
+                    </div>
+                    <div class="form-group form-check check-delete">
+                        <input name="delete_image" type="checkbox" value="true" class="form-check-input" id="delete_image">
+                        <label class="form-check-label" for="delete_image">Eliminar esta imagen</label>
+                    </div>
+                </div>
             </div>
         @else
-
+            <div class="form-group">
+                {{ Form::label('image', 'Cargar imagen') }}
+                <div class="custom-file">
+                    {{ Form::file('image', ['class' => '', 'id' => 'image_upload']) }}
+                </div>
+            </div>
         @endif
 
     </div>
