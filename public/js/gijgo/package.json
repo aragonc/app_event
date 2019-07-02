@@ -1,25 +1,41 @@
 {
-  "_from": "gijgo@^1.9.13",
+  "_args": [
+    [
+      "gijgo@^1.9.13",
+      "/var/www/app_event"
+    ]
+  ],
+  "_from": "gijgo@>=1.9.13 <2.0.0",
+  "_hasShrinkwrap": false,
   "_id": "gijgo@1.9.13",
-  "_inBundle": false,
-  "_integrity": "sha512-VxUzueysKaSRpjNM6jiMdoTJuUEWiPJNir5PCVKat6uA1R6vH7crKyFnR/Ey1k2r0i1yvYeJ3QKsPFkTB7aZxg==",
+  "_inCache": true,
+  "_installable": true,
   "_location": "/gijgo",
+  "_nodeVersion": "8.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/gijgo_1.9.13_1552465031665_0.5958440165718344"
+  },
+  "_npmUser": {
+    "email": "nascovt@gmail.com",
+    "name": "atatanasov"
+  },
+  "_npmVersion": "6.8.0",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "gijgo@^1.9.13",
     "name": "gijgo",
-    "escapedName": "gijgo",
+    "raw": "gijgo@^1.9.13",
     "rawSpec": "^1.9.13",
-    "saveSpec": null,
-    "fetchSpec": "^1.9.13"
+    "scope": null,
+    "spec": ">=1.9.13 <2.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/gijgo/-/gijgo-1.9.13.tgz",
   "_shasum": "22c6186252369de3a618e1e6369a923849128b6e",
+  "_shrinkwrap": null,
   "_spec": "gijgo@^1.9.13",
   "_where": "/var/www/app_event",
   "author": {
@@ -28,12 +44,10 @@
   "bugs": {
     "email": "atanas.nk.atanasov@gmail.com"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "jquery": "^3.2.1"
   },
-  "deprecated": false,
-  "description": "Gijgo is a set of free open source javascript controls distributed under MIT License. All widgets are high performance, built on top of the jQuery JavaScript Library with built-in support for Bootstrap, Material Design and Font Awesome. They are designed to saves you time and scales with your development process.",
+  "description": "Gijgo is a set of free open source javascript controls distributed under MIT License. All widgets are high performance, built on top of the jQuery JavaScript Library with built-in support for Bootstrap, Material Design and Font Awesome. They are designed ",
   "devDependencies": {
     "bootstrap": "^3.3.5",
     "express": "4.13.3",
@@ -47,36 +61,53 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-text-replace": "^0.4.0"
   },
+  "directories": {},
+  "dist": {
+    "fileCount": 32,
+    "integrity": "sha512-VxUzueysKaSRpjNM6jiMdoTJuUEWiPJNir5PCVKat6uA1R6vH7crKyFnR/Ey1k2r0i1yvYeJ3QKsPFkTB7aZxg==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJciLyICRA9TVsSAnZWagAAV/QQAJOvUIYzdTB3MsuQR7fo\n1oYHxn4ICKPo3i1BQ1O4Gajc4steHA0+WeFzNk6pWDyUb3QWFtO0aTsYLqQA\nEmGYTyJ+c+FrjxoECAC7RvWYiWkA/g95I3RJKIMT1yAbnNh0EKIa6saS03ce\nikrQ/mWmSr94PnvAqG9K1PyMSuhzFDxvGK0spR/SE/t463CZ1zq18rUXY3mZ\nA5qaAuDkUr3DlI7KF2IkxFk7CbkwlshA1AT3LBZ18Gksw9M22RWb+kcRtVkQ\n+N99+Gj8TCH3UTVZLqVERaTEHzhPLvOSD9fVxiEqcQBRmPvCLM0HK2N/Faq3\ndUIa294vOTOBVtN6+xP9fabpy+yGlF3C1YvSWumhvGUfDsv3ZdHVsvtZEbok\nEifKDqa7xeGcrSUChUp7PaNa/6FNvTr44BVa2H7AHxXPKmz0V43KAVWhk2x6\njffW919iSa8Aa9zL1UUDqRjvv78wRk9P1Wkgfjk1QOMisHzUORMUdn0s92oU\no743nJj+xd4N54abd16rXecBT+9477vWxN4w7J50mlAd7TLAgbBPy7tJfKBq\nhB712CBhTr+I3TxU++U8jB2J1eNYnStUyRjtKI/DgH+QO419xbO4TVpKIXPN\nDFKaeqEOGNlXuotYl7JOXGknMbkncEjeWjzr99li+G6fLP25oxWzqNwLaWcf\nyD/y\r\n=4Aq7\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "22c6186252369de3a618e1e6369a923849128b6e",
+    "tarball": "https://registry.npmjs.org/gijgo/-/gijgo-1.9.13.tgz",
+    "unpackedSize": 1098892
+  },
   "homepage": "http://gijgo.com/",
   "keywords": [
-    "jquery-plugin",
-    "jquery",
-    "gijgo",
-    "javascript",
-    "plugin",
-    "grid",
+    "angular",
+    "bootstrap",
+    "checkbox",
     "datagrid",
-    "table",
+    "datepicker",
+    "datetimepicker",
     "dialog",
-    "modal",
     "draggable",
+    "dropdown",
     "droppable",
+    "editor",
+    "gijgo",
+    "grid",
+    "javascript",
+    "jquery",
+    "jquery-plugin",
+    "modal",
+    "plugin",
+    "slider",
+    "table",
+    "timepicker",
     "tree",
     "treeview",
-    "editor",
-    "wysiwyg",
-    "checkbox",
-    "datepicker",
-    "timepicker",
-    "datetimepicker",
-    "dropdown",
-    "slider",
-    "angular",
-    "bootstrap"
+    "wysiwyg"
   ],
   "license": "MIT",
   "main": "js/gijgo.js",
+  "maintainers": [
+    {
+      "name": "atatanasov",
+      "email": "nascovt@gmail.com"
+    }
+  ],
   "name": "gijgo",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -26,3 +26,4 @@ Route::resource('/admin/event', 'Admin\EventController');
 Route::resource('/admin/people', 'Admin\PeopleController');
 
 Route::get('/event/{slug}', 'PageController@post')->name('event');
+Route::get('/admin/setting', 'SettingController@index')->name('setting');
