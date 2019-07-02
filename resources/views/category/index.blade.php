@@ -15,8 +15,9 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
+                <th width="40%" scope="col">Descripción</th>
                 <th scope="col">Imagen</th>
+                <th scope="col">Fecha creación</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Clients;
+use App\People;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class PeopleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Clients::orderBy('id','DESC')->paginate(20);
-        return view('client.index', compact('clients'));
+        $peoples = People::orderBy('id','DESC')->paginate(20);
+        return view('people.index', compact('peoples'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        Clients::create($request->all());
+        People::create($request->all());
         return redirect()->back()->with('info','Gracias por registrar tu información');
 
     }

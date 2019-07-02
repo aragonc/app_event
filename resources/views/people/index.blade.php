@@ -21,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($clients as $item)
+            @foreach($peoples as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->name }}</td>

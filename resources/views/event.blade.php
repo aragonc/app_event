@@ -58,9 +58,11 @@
         </div>
         <div class="column-b">
             <div class="form-static">
+                @if($event->category->image)
                 <div class="logo-category">
                     <img src="{{ Storage::url($event->category->image) }}" alt="" class="logo_des">
                 </div>
+                @endif
                 <div class="form-register">
                     <div class="card card-register">
                         <div class="card-body">

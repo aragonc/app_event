@@ -27,7 +27,7 @@ class Event extends Model
         return $this->belongsTo(Category::class);
     }
     public function clients(){
-        return $this->hasMany(Clients::class);
+        return $this->hasMany(People::class);
     }
 
 }
