@@ -66,7 +66,7 @@
                 <div class="form-register">
                     <div class="card card-register">
                         <div class="card-body">
-                            {!! Form::open(['route' => 'client.store']) !!}
+                            {!! Form::open(['route' => 'people.store']) !!}
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
                                     <label for="name">Nombres y Apellidos (*)</label>

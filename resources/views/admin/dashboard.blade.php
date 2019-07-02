@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-2">
             <div class="tool">
-                <a href="{{ route('client.index') }}">
+                <a href="{{ route('people.index') }}">
                     <img width="64px" src="{{ asset('img/svg/person.svg') }}" class="tool-icon">
                     <h6 class="tool-title">
                         Registros

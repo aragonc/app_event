@@ -33,10 +33,10 @@
                     <td>{{ $item->created_at }}</td>
                     <td>
                         <div class="actions">
-                            <a href="{{ route('client.edit', $item->id) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('people.edit', $item->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
-                            {!! Form::open(['route' => ['client.destroy', $item->id], 'id' => 'form-deleted-'.$item->id, 'method' => 'DELETE']) !!}
+                            {!! Form::open(['route' => ['people.destroy', $item->id], 'id' => 'form-deleted-'.$item->id, 'method' => 'DELETE']) !!}
                             <button data-form="form-deleted-{{$item->id}}" class="btn btn-danger deleted-btn btn-sm">
                                 <i class="fas fa-trash-alt"></i>
                             </button>

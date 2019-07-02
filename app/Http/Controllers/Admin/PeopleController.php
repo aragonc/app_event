@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\MessageRegister;
 use App\People;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PeopleController extends Controller
 {
@@ -38,7 +40,11 @@ class PeopleController extends Controller
     public function store(Request $request)
     {
         People::create($request->all());
-        return redirect()->back()->with('info','Gracias por registrar tu información');
+
+        //enviar Email de registro
+        Mail::to('aragcar@gmail.com')->send(new MessageRegister());
+
+        return redirect()->back()->with('info','Gracias por registrar tu información, hemos enviado un mensaje de confirmación');
 
     }
 

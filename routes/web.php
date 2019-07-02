@@ -23,6 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'DashboardController@index')->name('admin');
 Route::resource('/admin/category', 'Admin\CategoryController');
 Route::resource('/admin/event', 'Admin\EventController');
-Route::resource('/admin/client', 'Admin\ClientController');
+Route::resource('/admin/people', 'Admin\PeopleController');
 
-Route::get('event/{slug}', 'PageController@post')->name('event');
+Route::get('/event/{slug}', 'PageController@post')->name('event');
