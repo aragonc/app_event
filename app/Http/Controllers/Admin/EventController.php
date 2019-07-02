@@ -184,6 +184,8 @@ class EventController extends Controller
             }
         }
 
+        $event->fill($request->all())->save();
+
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue actualizado con éxito');
 
     }
