@@ -30,6 +30,9 @@
         .card-accordion .card .card-header .btn-link .fa{
             color: {{ $event->secondary_color }};
         }
+        .terms a{
+            color: {{ $event->secondary_color }};
+        }
     </style>
 @endsection
 
@@ -199,5 +202,5 @@
 @endsection
 
 @section('terms')
-    {{ $event->terms }}
+    {!! $event->terms !!}
 @endsection

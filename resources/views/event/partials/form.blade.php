@@ -132,6 +132,7 @@
                 <div class="custom-file">
                     {{ Form::file('image_top', ['class' => '', 'id' => 'image_top']) }}
                 </div>
+                <small class="form-text text-muted">La imagen debe ser de 1440 x 1024 pixeles.</small>
             </div>
         @endif
 
@@ -153,6 +154,7 @@
                 <div class="custom-file">
                     {{ Form::file('image_bottom', ['class' => '', 'id' => 'image_bottom']) }}
                 </div>
+                <small class="form-text text-muted">La imagen debe ser de 1440 x 1024 pixeles.</small>
             </div>
         @endif
 

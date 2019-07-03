@@ -164,6 +164,7 @@ footer{
     background: #ffffff;
     padding: 0;
 }
+
 @media (min-width: 1024px){
     /*.banner{
         background-image: url(images/fondo.jpg);
