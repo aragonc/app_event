@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('page_title')
-    Lista de eventos
+    Lista de usuarios del sistema
 @endsection
 @section('actions')
-    <a href="{{ route('event.create') }}" class="btn btn-success btn-sm">
-        <i class="fas fa-plus"></i> Agregar
+    <a href="{{ route('user.create') }}" class="btn btn-success btn-sm">
+        Crear usuarios
     </a>
 @endsection
 @section('content')
@@ -15,29 +15,23 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Fecha creación</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Fecha de registro</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
-
-            @foreach($events as $item)
+            @foreach($users as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td>{{ $item->subtitle }} {{ $item->title }}</td>
-                    <td>{{ $item->date }}</td>
-                    <td>{{ $item->category->name }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->email }}</td>
                     <td>{{ $item->status }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>
                         <div class="actions">
-                            <a href="{{ route('event', $item->slug) }}" class="btn btn-success btn-sm">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="{{ route('event.edit', $item->id) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('user.edit', $item->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             {!! Form::open(['route' => ['event.destroy', $item->id], 'id' => 'form-deleted-'.$item->id, 'method' => 'DELETE']) !!}

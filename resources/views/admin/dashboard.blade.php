@@ -50,7 +50,7 @@
         </div>
         <div class="col-md-2">
             <div class="tool">
-                <a href="#">
+                <a href="{{ route('user.index') }}">
                     <img width="64px" src="{{ asset('img/svg/users.svg') }}" class="tool-icon">
                     <h6 class="tool-title">
                         Usuarios

@@ -22,6 +22,7 @@ Route::get('/admin', 'DashboardController@index')->name('admin');
 Route::resource('/admin/category', 'Admin\CategoryController');
 Route::resource('/admin/event', 'Admin\EventController');
 Route::resource('/admin/people', 'Admin\PeopleController');
+Route::resource('/admin/user', 'Admin\UserController');
 
 Route::get('/event/{slug}', 'PageController@post')->name('event');
 Route::get('/admin/setting', 'SettingController@index')->name('setting');
