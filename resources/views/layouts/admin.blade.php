@@ -105,14 +105,15 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
+                            <a href="{{ route('admin') }}" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-home"></i>
+                            </a>
                             @yield('page_title')
                         </div>
                         <div class="card-body">
                             @hasSection('actions')
-                                <div class="card-header py-3">
-                                    <div class="toolbar-actions">
-                                        @yield('actions')
-                                    </div>
+                                <div class="toolbar-actions">
+                                    @yield('actions')
                                 </div>
                             @endif
                             @yield('content')

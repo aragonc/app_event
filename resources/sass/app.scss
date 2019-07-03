@@ -36,3 +36,27 @@ $fa-font-path: "~font-awesome/fonts";
 .card-image{
   text-align: center;
 }
+.toolbar-actions{
+  margin-bottom: 1rem;
+  text-align: right;
+}
+.navbar-laravel {
+  background-color: #5f77bd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.navbar-light .navbar-brand {
+  color: #FFFFFF;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+.tool {
+  text-align: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  background-color: #FFFFFF;
+}
+.tool:hover{
+  box-shadow: 10px 5px 5px 1px #cdcdcd;
+}
