@@ -14,6 +14,7 @@ class Event extends Model
         'place',
         'thematic',
         'schedule',
+        'contact',
         'contact_email',
         'contact_phone',
         'image_top',
@@ -21,6 +22,7 @@ class Event extends Model
         'primary_color',
         'secondary_color',
         'embed',
+        'terms',
         'status'
     ];
     public function category(){

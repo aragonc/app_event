@@ -16,9 +16,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Fecha</th>
-                <th scope="col">Lugar</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Fecha creación</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -28,15 +28,13 @@
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->subtitle }} {{ $item->title }}</td>
                     <td>{{ $item->date }}</td>
-                    <td>{{ $item->place }}</td>
-                    <td>{{ $item->category_id }}</td>
+                    <td>{{ $item->category->name }}</td>
                     <td>{{ $item->status }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>
                         <div class="actions">
-                            <a href="{{ route('event', $item->slug) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('event', $item->slug) }}" class="btn btn-success btn-sm">
                                 <i class="fas fa-eye"></i>
-                                Publicado
                             </a>
                             <a href="{{ route('event.edit', $item->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>

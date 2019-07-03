@@ -22,13 +22,15 @@ class CreateEventsTable extends Migration
             $table->string('place')->nullable();
             $table->mediumText('thematic')->nullable();
             $table->mediumText('schedule')->nullable();
-            $table->mediumText('contact_email')->nullable();
-            $table->mediumText('contact_phone')->nullable();
+            $table->mediumText('contact')->nullable();
+            $table->mediumText('embed')->nullable();
+            $table->string('contact_email')->nullable();
+            $table->string('contact_phone')->nullable();
             $table->string('image_top',250)->nullable();
             $table->string('image_bottom', 250)->nullable();
             $table->string('primary_color')->nullable();
             $table->string('secondary_color')->nullable();
-            $table->mediumText('embed')->nullable();
+            $table->mediumText('terms')->nullable();
             $table->enum('status',['published','draft'])->default('draft');
             $table->timestamps();
 

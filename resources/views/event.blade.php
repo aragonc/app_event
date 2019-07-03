@@ -34,7 +34,7 @@
 @endsection
 
 @section('page_title')
-    Dashboard
+    {{ $event->title }}
 @endsection
 
 @section('content')
@@ -46,8 +46,21 @@
             <div class="event text-center">
                 {{--<h3 class="subtitle">VI Congreso Nacional</h3>--}}
                 <h1 class="title">{{ $event->title }}</h1>
-                <div class="date">{{ $event->date }}</div>
-                <div class="direction">{{ $event->place }}</div>
+                <div class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }}</div>
+                <div class="direction"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->place }}</div>
+                <div class="contact">
+                    @if($event->contact_email)
+                    <span class="space">
+                        <i class="fa fa-envelope" aria-hidden="true"></i> {{ $event->contact_email }}
+                    </span>
+                    @endif
+                    @if($event->contact_email)
+                    <span class="space">
+
+                        <i class="fa fa-phone" aria-hidden="true"></i> {{ $event->contact_phone }}
+                    </span>
+                    @endif
+                </div>
                 <a href="#section-2">
                     <div class="bottom-benefits">
                         MIRA LOS BENEFICIOS <span>AQUÍ</span>
@@ -103,7 +116,9 @@
                             @endif
 
                             <div class="terms">
+                                @if($event->terms)
                                 <a class="modal-terms" href="#" id="terms-modal" data-toggle="modal" data-target="#modal-terms">Ver términos y condiciones</a>
+                                @endif
                                 <p>(*) Campos obligatorios</p>
                             </div>
                         </div>
@@ -120,6 +135,7 @@
         <div class="column-a">
             <div class="event">
                 <div class="accordion card-accordion" id="accordionExample">
+                    @if($event->thematic)
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h2 class="mb-0">
@@ -129,13 +145,14 @@
                                 </button>
                             </h2>
                         </div>
-
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
                                 {!! $event->thematic !!}
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @if($event->schedule)
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
@@ -151,6 +168,9 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+
+                    @if($event->contact)
                     <div class="card">
                         <div class="card-header" id="headingThree">
                             <h2 class="mb-0">
@@ -162,19 +182,22 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="card-body">
+                                {!! $event->contact !!}
 
-                                {{ $event->contact_email }}
-                                {{ $event->contact_phone }}
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
-
         </div>
         <div class="column-b">
 
         </div>
     </div>
 </section>
+@endsection
+
+@section('terms')
+    {{ $event->terms }}
 @endsection

@@ -90,6 +90,16 @@
         </div>
 
         <div class="form-group">
+            {{ Form::label('contact', 'Ficha contacto') }}
+            {{ Form::textarea('contact', null, ['class' => 'form-control ckeditor', 'id' => 'contact']) }}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('terms', 'Términos y condiciones') }}
+            {{ Form::textarea('terms', null, ['class' => 'form-control ckeditor', 'id' => 'terms']) }}
+        </div>
+
+        <div class="form-group">
             <div class="form-check form-check-inline">
                 {{ Form::radio('status', 'published', true, ['class' => 'form-check-input', 'id' => 'status-published']) }}
                 {{ Form::label('status-published','Publicado', ['class' => 'form-check-label']) }}
@@ -151,7 +161,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {{ Form::submit('Guardar', ['class' => 'btn btn-primary']) }}
+            {{ Form::submit('Guardar evento', ['class' => 'btn btn-success btn-block']) }}
         </div>
     </div>
 </div>

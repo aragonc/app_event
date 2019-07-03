@@ -166,6 +166,8 @@ class EventController extends Controller
                 //$event->fill($request->all())->save();
                 $event->fill(['image_top' => $pathFile])->save();
             }
+        }else{
+            $event->fill($request->all())->save();
         }
 
         if($request->hasFile('image_bottom')){
@@ -182,9 +184,11 @@ class EventController extends Controller
                 //$event->fill($request->all())->save();
                 $event->fill(['image_bottom' => $pathFile2])->save();
             }
+        }else{
+            $event->fill($request->all())->save();
         }
 
-        $event->fill($request->all())->save();
+
 
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue actualizado con éxito');
 

@@ -135,6 +135,17 @@ footer{
     width: 100%;
     font-size: 1.5rem;
 }
+.event .contact{
+    color: #FFF;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 18px;
+}
+.event .contact .space{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .btn-primary{
     background-color: transparent;
     border: 1px solid transparent;
