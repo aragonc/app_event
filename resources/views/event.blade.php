@@ -64,7 +64,7 @@
                     </span>
                     @endif
                 </div>
-                <a href="#section-2" id="scroll_bottom">
+                <a id="scroll_bottom">
                     <div class="bottom-benefits">
                         MIRA LOS BENEFICIOS <span>AQUÍ</span>
                     </div>
