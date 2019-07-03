@@ -22,7 +22,7 @@
                     <td>{{ $item->value }}</td>
                     <td>
                         <div class="actions">
-                            <a href="{{ route('category.edit', $item->id) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('setting.edit', $item->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             {!! Form::close() !!}
