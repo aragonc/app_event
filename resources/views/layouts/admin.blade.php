@@ -128,29 +128,7 @@
 <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.js') }}"></script>
 
 <script type="text/javascript">
-    //Dialog for deleted item row table
 
-    $(document).ready(function() {
-        $('.deleted-btn').click(function(e) {
-            e.preventDefault();
-
-            var formURL = $(this).attr("data-form");
-            warnBeforeRedirect(formURL);
-        });
-        function warnBeforeRedirect(formURL) {
-            Swal.fire({
-                title: "{{ __('Warning') }}",
-                text: "{{ __('You want to delete the selection') }}",
-                type: "warning",
-                showCancelButton: true,
-                cancelButtonText: "{{ __('Cancel') }}"
-            }).then(function(isConfirm) {
-                if (isConfirm.value === true) {
-                    $('#'+formURL).submit();
-                }
-            });
-        }
-    });
 </script>
 @yield('scripts_footer')
 </body>

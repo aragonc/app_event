@@ -17,6 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
 mix.copyDirectory('resources/img', 'public/img');
 mix.copyDirectory('resources/css', 'public/css');
 mix.copyDirectory('resources/fonts', 'public/fonts');
-mix.copyDirectory('resources/js', 'public/js');
 mix.copyDirectory('node_modules/gijgo', 'public/js/gijgo');
 mix.copyDirectory('node_modules/sweetalert2', 'public/vendor/sweetalert2');
