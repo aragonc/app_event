@@ -46,14 +46,15 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}" defer></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="{{ asset('js/popper.min.js') }}" defer></script>
 <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
 <script>
     $(document).ready(function(){
-        $('.scrollToTop').click(function(){
-            $("html, body").animate({scrollTop : 0},700);
-            return false;
+        $('#scroll_bottom').click(function(){
+            $("html, body").animate({
+                scrollTop : $(window).height()
+            },1200);
         });
     });
 </script>

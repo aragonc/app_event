@@ -9,7 +9,7 @@
             background-color: {{ $event->primary_color }};
         }
         .card-accordion .card .card-header{
-            background: {{ $event->primary_color }};
+            background: {{ $event->primary_color }}70;
         }
         footer{
             background: {{ $event->primary_color }};
@@ -64,7 +64,7 @@
                     </span>
                     @endif
                 </div>
-                <a href="#section-2">
+                <a href="#section-2" id="scroll_bottom">
                     <div class="bottom-benefits">
                         MIRA LOS BENEFICIOS <span>AQUÍ</span>
                     </div>
