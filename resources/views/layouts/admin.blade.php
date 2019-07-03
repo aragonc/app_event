@@ -105,10 +105,15 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
+                            <a href="javascript: history.go(-1)" class="btn btn-success btn-sm">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
                             <a href="{{ route('admin') }}" class="btn btn-outline-success btn-sm">
                                 <i class="fas fa-home"></i>
                             </a>
-                            @yield('page_title')
+                            <div class="float-right">
+                                @yield('page_title')
+                            </div>
                         </div>
                         <div class="card-body">
                             @hasSection('actions')

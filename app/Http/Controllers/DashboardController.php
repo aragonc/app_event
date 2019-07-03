@@ -21,7 +21,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $settings = Setting::all();
+        $settings = Setting::all()->toArray();
+
         return view('admin.dashboard', compact(['user','settings']));
     }
 
