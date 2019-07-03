@@ -8,7 +8,31 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+$fa-font-path: "~font-awesome/fonts";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import "~gijgo/css/gijgo.css";
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.actions{
+  form{
+    display: inline-block;
+  }
+}
+.form-required{
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: bold;
+}
+.check-delete{
+  margin-top: 1rem;
+}
+.check-delete label{
+  font-weight: normal;
+}
+.card-image{
+  text-align: center;
 }

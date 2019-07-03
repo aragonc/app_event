@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-eslint-config');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,11 +12,7 @@ require('laravel-mix-eslint-config');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/admin.js', 'public/js');
-
-
-mix.sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/admin.scss', 'public/css/admin');
+    .sass('resources/sass/app.scss', 'public/css');
 
 mix.copyDirectory('resources/img', 'public/img');
 mix.copyDirectory('resources/css', 'public/css');
