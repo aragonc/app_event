@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 //Admin
 Route::get('/admin', 'DashboardController@index')->name('admin');
 Route::resource('/admin/category', 'Admin\CategoryController');
@@ -27,3 +25,4 @@ Route::resource('/admin/people', 'Admin\PeopleController');
 
 Route::get('/event/{slug}', 'PageController@post')->name('event');
 Route::get('/admin/setting', 'SettingController@index')->name('setting');
+Route::get('/export/excel', 'ExcelController@exportPeoples')->name('excel');

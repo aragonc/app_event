@@ -2,7 +2,11 @@
 @section('page_title')
     Lista de clientes
 @endsection
-
+@section('actions')
+    <a href="{{ route('excel') }}" class="btn btn-success btn-sm">
+        <i class="fas fa-plus"></i> Exportar a Excel
+    </a>
+@endsection
 @section('content')
 
     <div class="table-responsive">
