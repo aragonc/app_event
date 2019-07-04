@@ -24,7 +24,7 @@ class SettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $variable
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -41,6 +41,15 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return view('setting.index');
+        $value = null;
+
+        if($request->has('setting')){
+            $value = $request->get('setting');
+        }
+
+        $setting = Setting::find($id);
+        $setting->fill(['value'=> $value])->save();
+
+        return redirect()->route('setting')->with('info','La configuración se actualizo con éxito');
     }
 }

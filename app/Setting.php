@@ -11,4 +11,6 @@ class Setting extends Model
         'value',
         'display_text'
     ];
+
+
 }

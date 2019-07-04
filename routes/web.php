@@ -27,5 +27,5 @@ Route::resource('/admin/user', 'Admin\UserController');
 Route::get('/event/{slug}', 'PageController@post')->name('event');
 Route::get('/admin/setting', 'SettingController@index')->name('setting');
 Route::get('/admin/setting/edit/{id}', 'SettingController@edit')->name('setting.edit');
-Route::post('/admin/setting/update/{id}', 'SettingController@update')->name('setting.update');
+Route::put('/admin/setting/update/{id}', 'SettingController@update')->name('setting.update');
 Route::get('/export/excel', 'ExcelController@exportPeoples')->name('excel');
