@@ -237,7 +237,7 @@ footer{
     }
 }
 @media (max-width: 480px) {
-    .column-b{
+    .column-b.movil{
         display: none;
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
-use App\Resources;
 use Illuminate\Http\Request;
 
 //Load Files

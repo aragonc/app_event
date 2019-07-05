@@ -1,83 +1,13 @@
 {
-  "_args": [
-    [
-      "sweetalert2@^8.8.1",
-      "/var/www/app_event"
-    ]
-  ],
-  "_from": "sweetalert2@>=8.8.1 <9.0.0",
-  "_hasShrinkwrap": false,
-  "_id": "sweetalert2@8.13.0",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/sweetalert2",
-  "_nodeVersion": "10.16.0",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/sweetalert2_8.13.0_1561132913406_0.5132252880412866"
-  },
-  "_npmUser": {
-    "email": "limon.monte@gmail.com",
-    "name": "limonte"
-  },
-  "_npmVersion": "6.9.0",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "sweetalert2",
-    "raw": "sweetalert2@^8.8.1",
-    "rawSpec": "^8.8.1",
-    "scope": null,
-    "spec": ">=8.8.1 <9.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/sweetalert2/-/sweetalert2-8.13.0.tgz",
-  "_shasum": "6a57279ba84e9f7ac3e0fc60586bfd2cd40de78f",
-  "_shrinkwrap": null,
-  "_spec": "sweetalert2@^8.8.1",
-  "_where": "/var/www/app_event",
-  "author": {
-    "email": "limon.monte@gmail.com",
-    "name": "Limon Monte",
-    "url": "https://limonte.github.io"
-  },
-  "browser": "dist/sweetalert2.all.js",
-  "bugs": {
-    "url": "https://github.com/sweetalert2/sweetalert2/issues"
-  },
-  "contributors": [
-    {
-      "name": "Matthew Francis Brunetti",
-      "email": "zenflow87@gmail.com",
-      "url": "https://github.com/zenflow"
-    },
-    {
-      "name": "Morgan Touverey-Quilling",
-      "email": "mtouverey@alembic-dev.com",
-      "url": "https://github.com/toverux"
-    },
-    {
-      "name": "Joseph Schultz",
-      "url": "https://github.com/acupajoe"
-    },
-    {
-      "name": "Sam Turrell",
-      "email": "sam@samturrell.co.uk",
-      "url": "https://github.com/samturrell"
-    },
-    {
-      "name": "Johan Fagerberg",
-      "url": "https://github.com/birjolaxew"
-    },
-    {
-      "name": "Giuseppe Verni",
-      "url": "https://github.com/gverni"
-    }
-  ],
-  "dependencies": {},
+  "name": "sweetalert2",
+  "version": "8.13.0",
+  "repository": "sweetalert2/sweetalert2",
+  "homepage": "https://sweetalert2.github.io/",
   "description": "A beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes, supported fork of sweetalert",
+  "main": "dist/sweetalert2.all.js",
+  "browser": "dist/sweetalert2.all.js",
+  "module": "src/sweetalert2.js",
+  "types": "sweetalert2.d.ts",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-object-assign": "^7.2.0",
@@ -132,88 +62,56 @@
     "typescript": "^3.2.4",
     "webpack": "^4.29.0"
   },
-  "directories": {},
-  "dist": {
-    "fileCount": 75,
-    "integrity": "sha512-jxsGw0+9jJS123rPzsaRVUJPm8HJnvuY6a02appPohW7I46DIIYnd/F7B6036uHSeunHfHRYLhtVcfTjDufjuQ==",
-    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDP9yCRA9TVsSAnZWagAAM00P/RbxkHncFvPpjFy04M5v\nkKA9/+PIqA0XawBpko0jLpPVTkgQwBd7oEwx/+MzMxb/WIT4DC1Xl+6LkICr\n1/FHgDnORihaqMtk0XvH3gOEvcN+0JB31CJmhH6urH56pq2vD9xJtQsLDgun\nvbMdQsIzaU1o0YE9+YgKlFOAKo03Tx7FuW5+4P+Y+03CsyJE/qjak7gmRA/X\nnwB+5RwbtyByOfxCD0VstWzhW/mJQ/i1usA2WYIgQgtHXqnG4Te41h4AbO5s\nLdoQCNDE6OFzV79WagaQwKlmPV/TM9MzCdzor+1Udh85soGXDZZmABVcK09B\nKhJkMEBRek6cpNiuxIzerLZDvtwPmYSWkN/W5aL5qp60v+plmQJlnl1ArWsV\nFPk2Sge/LUswfXfjsRxoIroV+Gsfqk8Xc7MNqQSxHbhWWfw/u4OI+UOBJWhv\nWT89CtWK+Lq663SC9LT8a8zKdgnGZeyL5IwyOBF4J9+y6QVP2GJbyXmxbyH+\nkTRQTZuF3W1VF3XoIwItsKCldsJay5LMfgJvwyjr7oKolpF/icJs/NUAwa2i\n+78b61zFONLKzB2DD/NDfm+XYfphSkaqyzatsamXQGYuvVMe5xvY40xETIPB\nz7gkkojoWv21ph57HX9UEFySchva28V9I7hcZVVI1D98HB1XBJkO7EF6qc+e\nPAyl\r\n=dwZZ\r\n-----END PGP SIGNATURE-----\r\n",
-    "shasum": "6a57279ba84e9f7ac3e0fc60586bfd2cd40de78f",
-    "tarball": "https://registry.npmjs.org/sweetalert2/-/sweetalert2-8.13.0.tgz",
-    "unpackedSize": 552549
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "gitHead": "15f2f0b742c8a95c6c7c18b9b0eb9580af7b8fa3",
-  "homepage": "https://sweetalert2.github.io/",
+  "files": [
+    "bin",
+    "dist",
+    "src",
+    "sweetalert2.d.ts"
+  ],
+  "author": "Limon Monte <limon.monte@gmail.com> (https://limonte.github.io)",
+  "contributors": [
+    "Matthew Francis Brunetti <zenflow87@gmail.com> (https://github.com/zenflow)",
+    "Morgan Touverey-Quilling <mtouverey@alembic-dev.com> (https://github.com/toverux)",
+    "Joseph Schultz (https://github.com/acupajoe)",
+    "Sam Turrell <sam@samturrell.co.uk> (https://github.com/samturrell)",
+    "Johan Fagerberg (https://github.com/birjolaxew)",
+    "Giuseppe Verni (https://github.com/gverni)"
+  ],
   "keywords": [
-    "accessible",
+    "sweetalert",
+    "sweetalert2",
     "alert",
-    "confirm",
     "modal",
     "popup",
     "prompt",
-    "sweetalert",
-    "sweetalert2",
-    "toast"
+    "confirm",
+    "toast",
+    "accessible"
   ],
-  "license": "MIT",
-  "main": "dist/sweetalert2.all.js",
-  "maintainers": [
-    {
-      "name": "acupajoe",
-      "email": "joseph@acupajoe.io"
-    },
-    {
-      "name": "gverni",
-      "email": "g.verni@gmail.com"
-    },
-    {
-      "name": "limonte",
-      "email": "limon.monte@gmail.com"
-    },
-    {
-      "name": "samturrell",
-      "email": "sam@samturrell.co.uk"
-    },
-    {
-      "name": "toverux",
-      "email": "morgan.touverey@outlook.fr"
-    },
-    {
-      "name": "zen_flow",
-      "email": "zenflow87@gmail.com"
-    }
-  ],
-  "module": "src/sweetalert2.js",
-  "name": "sweetalert2",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sweetalert2/sweetalert2.git"
+  "engines": {
+    "node": ">=0.10.0"
   },
   "scripts": {
+    "start": "gulp develop --continue-on-error --skip-minification --skip-standalone",
+    "fix:lint": "eslint --fix .",
+    "test": "npm run build && npm run check",
     "build": "gulp build",
     "check": "npm run check:lint && npm run check:require-in-node && npm run check:qunit && npm run check:qunit:minified && npm run check:ts",
-    "check:jest": "jest --ci",
-    "check:jsdelivr": "curl --location 'https://cdn.jsdelivr.net/npm/sweetalert2' 2>&1 | grep --quiet 'this.Swal'",
+    "check:sauce": "npm run check:qunit:sauce && npm run check:qunit:minified:sauce",
     "check:lint": "gulp lint",
+    "check:require-in-node": "node test/require-in-node",
+    "check:jest": "jest --ci",
     "check:qunit": "karma start karma.conf.js --single-run",
     "check:qunit:minified": "karma start karma.conf.js --single-run --minified",
-    "check:qunit:minified:sauce": "karma start karma.conf.js --single-run --minified --sauce",
     "check:qunit:sauce": "karma start karma.conf.js --single-run --sauce",
-    "check:require-in-node": "node test/require-in-node",
-    "check:sauce": "npm run check:qunit:sauce && npm run check:qunit:minified:sauce",
-    "check:third-party": "npm run check:unpkg && npm run check:jsdelivr && npm run check:wappalyzer",
+    "check:qunit:minified:sauce": "karma start karma.conf.js --single-run --minified --sauce",
     "check:ts": "tsc --lib dom,es6 sweetalert2.d.ts",
-    "check:unpkg": "curl --location 'https://unpkg.com/sweetalert2' 2>&1 | grep --quiet 'this.Swal'",
+    "check:third-party": "npm run check:unpkg && npm run check:jsdelivr && npm run check:wappalyzer",
     "check:wappalyzer": "curl 'https://api.wappalyzer.com/lookup-basic/v1/?url=https%3A%2F%2Fsweetalert2.github.io' 2>&1 | grep --quiet 'SweetAlert2'",
-    "fix:lint": "eslint --fix .",
-    "postinstall": "node bin/postinstall.js",
-    "start": "gulp develop --continue-on-error --skip-minification --skip-standalone",
-    "test": "npm run build && npm run check"
+    "check:unpkg": "curl --location 'https://unpkg.com/sweetalert2' 2>&1 | grep --quiet 'this.Swal'",
+    "check:jsdelivr": "curl --location 'https://cdn.jsdelivr.net/npm/sweetalert2' 2>&1 | grep --quiet 'this.Swal'",
+    "postinstall": "node bin/postinstall.js"
   },
-  "types": "sweetalert2.d.ts",
-  "version": "8.13.0"
+  "bugs": "https://github.com/sweetalert2/sweetalert2/issues",
+  "license": "MIT"
 }

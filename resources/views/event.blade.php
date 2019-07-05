@@ -194,7 +194,7 @@
                 </div>
             </div>
         </div>
-        <div class="column-b">
+        <div class="column-b movil">
 
         </div>
     </div>
