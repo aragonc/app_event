@@ -19,7 +19,9 @@
 <body>
 
 <header>
-    <img src="{{ asset('img/logo.svg') }}" class="logo">
+    <a href="{{ setting('app_url') }}">
+        <img src="{{ Storage::url(setting('app_logo')) }}" class="img-fluid">
+    </a>
 </header>
 
 <main>

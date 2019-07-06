@@ -7,7 +7,7 @@ main{
 }
 header {
     text-align: center;
-    height: 100px;
+    padding: 10px 0;
 }
 .banner{
     position: relative;
@@ -237,7 +237,15 @@ footer{
     }
 }
 @media (max-width: 480px) {
-    .column-b{
+    .mask{
         display: none;
+    }
+    .event{
+        z-index: 3;
+        position: relative;
+    }
+    footer{
+        position: relative;
+        z-index: 3;
     }
 }
