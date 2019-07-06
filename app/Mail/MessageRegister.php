@@ -19,9 +19,9 @@ class MessageRegister extends Mailable
      *
      * @return void
      */
-    public function __construct($distressCall)
+    public function __construct()
     {
-        $this->distressCall = $distressCall;
+        
     }
 
     /**
