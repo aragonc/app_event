@@ -82,23 +82,30 @@
                 <div class="form-register">
                     <div class="card card-register">
                         <div class="card-body">
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ $error }}
+                                    </div>
+                                @endforeach
+                            @endif
                             {!! Form::open(['route' => 'people.store']) !!}
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
                                     <label for="name">Nombres y Apellidos (*)</label>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="">
+                                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="dni">DNI (*)</label>
-                                    <input type="text" class="form-control" name="dni" id="dni" placeholder="">
+                                    <input type="text" class="form-control" name="dni" id="dni" value="{{ old('dni') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Correo electronico (*)</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="">
+                                    <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Celular (*)</label>
-                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="">
+                                    <input type="text" class="form-control" name="phone" id="phone" value="{{ old('phone') }}">
                                 </div>
 
                                 <div class="form-group form-check">

@@ -12,15 +12,16 @@ class MessageRegister extends Mailable
     use Queueable, SerializesModels;
 
     public  $subject = 'Gracias por registrarte';
+    public $distressCall;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($distressCall)
     {
-        //
+        $this->distressCall = $distressCall;
     }
 
     /**
