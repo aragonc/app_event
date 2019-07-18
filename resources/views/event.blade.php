@@ -76,7 +76,7 @@
             <div class="form-static">
                 @if($event->category->image)
                 <div class="logo-category">
-                    <img src="{{ Storage::url($event->category->image) }}" alt="" class="logo_des">
+                    <img src="{{ url(Storage::url($event->category->image)) }}" alt="" class="logo_des">
                 </div>
                 @endif
                 <div class="form-register">

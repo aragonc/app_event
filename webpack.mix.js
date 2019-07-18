@@ -19,3 +19,4 @@ mix.copyDirectory('resources/css', 'public/css');
 mix.copyDirectory('resources/fonts', 'public/fonts');
 mix.copyDirectory('node_modules/gijgo', 'public/js/gijgo');
 mix.copyDirectory('node_modules/sweetalert2', 'public/vendor/sweetalert2');
+mix.copyDirectory('node_modules/bootbox', 'public/vendor/bootbox');

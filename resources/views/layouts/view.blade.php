@@ -11,13 +11,29 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <title>@yield('page_title')</title>
+
     @yield('css')
     @yield('scripts_header')
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{{ asset('js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('vendor/bootbox/dist/bootbox.min.js') }}" defer></script>
+    <script src="{{ asset('vendor/bootbox/dist/bootbox.locales.min.js') }}" defer></script>
+    <script>
+        $(document).ready(function(){
+            $('#scroll_bottom').click(function(){
+                $("html, body").animate({
+                    scrollTop : $(window).height()
+                },1200);
+            });
+        });
+    </script>
 
-    <title>@yield('page_title')</title>
+
 </head>
 <body>
-
+@include('layouts/notification')
 <header>
     <a href="{{ setting('app_url') }}">
         <img src="{{ Storage::url(setting('app_logo')) }}" class="img-fluid">
@@ -48,17 +64,6 @@
         </div>
     </div>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="{{ asset('js/popper.min.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
-<script>
-    $(document).ready(function(){
-        $('#scroll_bottom').click(function(){
-            $("html, body").animate({
-                scrollTop : $(window).height()
-            },1200);
-        });
-    });
-</script>
+
 </body>
 </html>

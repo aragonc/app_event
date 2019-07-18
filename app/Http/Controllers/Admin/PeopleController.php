@@ -49,12 +49,15 @@ class PeopleController extends Controller
             ]
         );
 
-        People::create($request->all());
+        $people = People::create($request->all());
+        $email = $people->email;
+        //die($people->email);
 
         //enviar Email de registro
-        Mail::to('aragcar@gmail.com')->send(new MessageRegister());
+        Mail::to($email)->send(new MessageRegister($people));
+        session()->put('notify','Email enviado');
 
-        return redirect()->back()->with('info','Gracias por registrar tu información, hemos enviado un mensaje de confirmación');
+        return redirect()->back();
 
     }
 

@@ -11,17 +11,17 @@ class MessageRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public  $subject = 'Gracias por registrarte';
-    public $distressCall;
+    public $subject = 'Gracias por registrarte';
+    public $people;
 
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $people
      */
-    public function __construct()
+    public function __construct($people)
     {
-        
+        $this->people = $people;
     }
 
     /**
@@ -31,6 +31,9 @@ class MessageRegister extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.message-register');
+        return $this->view('emails.message-register')
+                    ->with([
+                        'name' => $this->people->name
+                    ]);
     }
 }

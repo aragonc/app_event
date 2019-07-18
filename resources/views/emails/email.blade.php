@@ -23,7 +23,7 @@
                                 <tr>
                                     <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
                                         <div style="text-align: center;">
-                                            <img src="{{ Storage::url(setting('app_logo')) }}" width="200px;">
+                                            <img src="{{ asset('img/logo_app.png') }}" width="200px;">
                                         </div>
                                         <hr style="color: #ccc; height:1px; border:0; background-color:#999999;">
                                         <br>
