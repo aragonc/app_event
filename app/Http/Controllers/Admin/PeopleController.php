@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Event;
 use App\Mail\MessageRegister;
 use App\People;
 use App\Http\Controllers\Controller;
@@ -50,11 +51,12 @@ class PeopleController extends Controller
         );
 
         $people = People::create($request->all());
+        $event = Event::find($people->event_id);
         $email = $people->email;
         //die($people->email);
 
         //enviar Email de registro
-        Mail::to($email)->send(new MessageRegister($people));
+        Mail::to($email)->send(new MessageRegister($people,$event));
         session()->put('notify','Email enviado');
 
         return redirect()->back();
