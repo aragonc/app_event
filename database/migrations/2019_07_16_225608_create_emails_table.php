@@ -15,7 +15,18 @@ class CreateEmailsTable extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('event_id')->unsigned();
+            $table->string('title');
+            $table->mediumText('content')->nullable();
+            $table->string('media')->nullable();
+            $table->string('brochure')->nullable();
             $table->timestamps();
+
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
