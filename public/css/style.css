@@ -44,7 +44,8 @@ header {
     border: none;
 }
 .card-register label{
-    font-size: 14px;
+    font-size: 12px;
+    margin-bottom: .2rem;
 }
 .form-register{
     background-color: rgb(30, 47, 70);
