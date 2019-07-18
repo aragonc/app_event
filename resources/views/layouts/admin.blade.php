@@ -105,9 +105,9 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <a href="javascript: history.go(-1)" class="btn btn-success btn-sm">
+                           {{-- <a href="javascript: history.go(-1)" class="btn btn-success btn-sm">
                                 <i class="fas fa-arrow-left"></i>
-                            </a>
+                            </a>--}}
                             <a href="{{ route('admin') }}" class="btn btn-outline-success btn-sm">
                                 <i class="fas fa-home"></i>
                             </a>

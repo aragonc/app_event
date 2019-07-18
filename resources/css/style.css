@@ -251,4 +251,10 @@ footer{
     .event .title{
         font-size: 2rem;
     }
+    header img{
+        width: 215px;
+    }
+    .form-register{
+        padding: 0;
+    }
 }

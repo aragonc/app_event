@@ -1,41 +1,54 @@
 {
-  "_from": "bootbox",
+  "_args": [
+    [
+      "bootbox@^5.2.0",
+      "/var/www/app_event"
+    ]
+  ],
+  "_from": "bootbox@>=5.2.0 <6.0.0",
+  "_hasShrinkwrap": false,
   "_id": "bootbox@5.2.0",
-  "_inBundle": false,
-  "_integrity": "sha512-hEevUk73BtSRwQ3gvFm3Rxgd1SqfslKU/RKvd/G9/ykxnKuHf9a1yNEUso2Lwb7PYtm2OBbiLV3V58+Bk1dxsw==",
+  "_inCache": true,
+  "_installable": true,
   "_location": "/bootbox",
+  "_nodeVersion": "10.15.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/bootbox_5.2.0_1563049054974_0.8600383418857522"
+  },
+  "_npmUser": {
+    "email": "tiesont@gmail.com",
+    "name": "tiesont"
+  },
+  "_npmVersion": "6.4.1",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "bootbox",
     "name": "bootbox",
-    "escapedName": "bootbox",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "raw": "bootbox@^5.2.0",
+    "rawSpec": "^5.2.0",
+    "scope": null,
+    "spec": ">=5.2.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/bootbox/-/bootbox-5.2.0.tgz",
   "_shasum": "07b14c2addfa4327e8cc58616678394cb8e6fde8",
-  "_spec": "bootbox",
+  "_shrinkwrap": null,
+  "_spec": "bootbox@^5.2.0",
   "_where": "/var/www/app_event",
   "author": {
-    "name": "Nick Payne",
-    "email": "nick@kurai.co.uk"
+    "email": "nick@kurai.co.uk",
+    "name": "Nick Payne"
   },
   "bugs": {
     "url": "https://github.com/makeusabrew/bootbox/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "bootstrap": ">=3.0.0",
     "jquery": ">=1.9.1"
   },
-  "deprecated": false,
   "description": "Wrappers for JavaScript alert(), confirm() and other flexible dialogs using the Bootstrap framework",
   "devDependencies": {
     "chai": "^3.5.0",
@@ -63,15 +76,35 @@
   "directories": {
     "test": "tests"
   },
-  "files": [
-    "dist/*.js",
-    "src/*.js",
-    "src/*/*.js"
-  ],
+  "dist": {
+    "fileCount": 50,
+    "integrity": "sha512-hEevUk73BtSRwQ3gvFm3Rxgd1SqfslKU/RKvd/G9/ykxnKuHf9a1yNEUso2Lwb7PYtm2OBbiLV3V58+Bk1dxsw==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdKjxgCRA9TVsSAnZWagAACn8P/0e76u8pl9EigwbaKimA\nWqfhinNr5TrC6k1Illcgw7eTAUOO/dPrBjIGr5kckf00zHedYUkyG43d8aLG\nsE8Y0pzenkPTKTXeACvX5tu9ZK8PmU4yC1JN7kF+VFnHIj47j/Y2sbdOjF5b\nM1KDnzZ1t6YqRHJ9N/LE3c4WrP/gUnSdOIMUcN7iiNauZahSWeGhPGNJ3C4O\nJ9ziLJGOc8+9Icx0qHx060hNMu6lBdsmu0NZxn9elTkSHHVYcMh6vcSFHxsy\nJPsupA9q0rRsqSDqq96WEb19L9CnjhwxwHndKGNHZyx84aKQr71YbLUHLgUo\n5gsbqVkmR1oZ6B3DD4DtsbZiozkoGwOAO00fNTKagQeg2N0WRN5G5f9gMEwx\nYql4vl3bUZRi8AU/4h8b1cqLNq0k0MPOVsLt27Urn1X9Y4DZDiiXCnidMW55\nQvgrgoh02FwHlTEjX//QEmnQ5blZklETanKHyFGP2ZIEsjtCKOTJRUroJT7H\ndB/UL2IxTFtZlgJWrSl1mZmqPNejZyZb2of1SIGlNzgYQsrrXVEttVJE2CUz\nirt9SNVKhcjyJQH19oY62/AFTTePmIjWMOhsD9h6utfS01YxxRXDbBPoaVSr\nSTGaCcDpfadzFGQScQchHGa83AHx6Lrsk+Dc9V4pvgf84j5TgZbiSuBSPM3T\nfSRA\r\n=2sJJ\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "07b14c2addfa4327e8cc58616678394cb8e6fde8",
+    "tarball": "https://registry.npmjs.org/bootbox/-/bootbox-5.2.0.tgz",
+    "unpackedSize": 159999
+  },
+  "gitHead": "c30d8044a191ef08c7c20bc2093da14a614573f7",
   "homepage": "https://github.com/makeusabrew/bootbox#readme",
   "license": "MIT",
   "main": "dist/bootbox.all.min.js",
+  "maintainers": [
+    {
+      "name": "defunctzombie",
+      "email": "shtylman@gmail.com"
+    },
+    {
+      "name": "makeusabrew",
+      "email": "nick@kurai.co.uk"
+    },
+    {
+      "name": "tiesont",
+      "email": "tiesont@gmail.com"
+    }
+  ],
   "name": "bootbox",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git://github.com/makeusabrew/bootbox.git"
