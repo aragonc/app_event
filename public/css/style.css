@@ -278,5 +278,6 @@ footer{
     }
     #section-2 .column-b .form-static{
         display: block;
+        padding-bottom: 2rem;
     }
 }
