@@ -235,6 +235,10 @@ footer{
         display: flex;
         justify-content: center;
     }
+
+}
+
+@media (max-width: 767px) {
     #section-1 .column-b{
         display: none;
     }

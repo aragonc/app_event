@@ -167,13 +167,13 @@ footer{
     background: #ffffff;
     padding: 0;
 }
-#section-2 .column-b{
+#section-2 .column-b .form-static{
     display: none;
 }
 #section-1 .column-b{
     display: block;
 }
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .mask{
         height: 100vh;
         background-color: rgba(0, 34, 97, 0.6);
@@ -235,6 +235,10 @@ footer{
         display: flex;
         justify-content: center;
     }
+
+}
+
+@media (max-width: 767px) {
     #section-1 .column-b{
         display: none;
     }
@@ -271,7 +275,7 @@ footer{
     #section-1 .column-b{
         display: none;
     }
-    #section-2 .column-b{
+    #section-2 .column-b .form-static{
         display: block;
     }
 }
