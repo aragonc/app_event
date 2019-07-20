@@ -173,12 +173,17 @@ footer{
 #section-1 .column-b{
     display: block;
 }
+.mask{
+    height: 100vh;
+    background-color: rgba(0, 34, 97, 0.6);
+    background-image: none;
+}
+.movil-grid{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
 @media (min-width: 1024px) {
-    .mask{
-        height: 100vh;
-        background-color: rgba(0, 34, 97, 0.6);
-        background-image: none;
-    }
+
     header {
         display: none;
     }
@@ -227,10 +232,7 @@ footer{
         cursor: pointer;
         color: #fff;
     }
-    .movil-grid{
-        display: block;
-        background-color: rgba(0, 0, 0, 0.2) !important;
-    }
+
     .left{
         display: flex;
         justify-content: center;
@@ -238,17 +240,11 @@ footer{
 
 }
 
-@media (max-width: 767px) {
-    #section-1 .column-b{
-        display: none;
-    }
-    #section-2 .column-b{
-        display: block;
-    }
-}
 @media (max-width: 480px) {
     .mask{
-        display: none;
+        height: 100%;
+        background-color: rgba(0, 34, 97, 0.6);
+        background-image: none;
     }
     .event{
         z-index: 3;
