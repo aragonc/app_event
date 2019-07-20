@@ -7,6 +7,10 @@ use App\Event;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//Load Files
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
+
 class EmailController extends Controller
 {
     public function __construct()
@@ -52,8 +56,8 @@ class EmailController extends Controller
 
             // Comprobamos que tenga el tamaño correcto
             $image = Image::make($file->getRealPath());
-            if($image->getWidth() != '425' and $image->getHeight() !='90'){
-                return back()->with('error','La imagen debe ser de 425 x 90 pixeles');
+            if($image->getWidth() != '600' and $image->getHeight() !='144'){
+                return back()->with('error','La imagen debe ser de 600 x 144 pixeles');
             } else {
                 $name = uniqid().'_message_'.$file->getClientOriginalName();
                 $pathFile = $file->storeAs('public/upload/message',$name);
@@ -78,5 +82,60 @@ class EmailController extends Controller
         $events = Event::all();
         $email = Email::find($id);
         return view ('emails.edit',compact(['email','events']));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $email = Email::find($id);
+        $pathFile = null;
+
+        //Verificamos que la image desea ser borrada
+        $deleteImage = $request->has('delete_image');
+        if($deleteImage){
+            $fullPath = $email->image;
+            $deleted = Storage::delete($fullPath);
+            if($deleted){
+                $email->fill(['media' => $pathFile])->save();
+                return back()->with('info','La imagen fue eliminada');
+            }
+        }
+
+        //Comprobamos que se esta enviado una imagen
+        if($request->hasFile('media')){
+            $file = $request->file('media');
+
+            // Comprobamos que tenga el tamaño correcto
+            $image = Image::make($file->getRealPath());
+            if($image->getWidth() != '600' and $image->getHeight() !='144'){
+                return back()->with('error','La imagen debe ser de 600 x 144 pixeles');
+            } else {
+                $name = uniqid().'_message_'.$file->getClientOriginalName();
+                $pathFile = $file->storeAs('public/upload/message',$name);
+            }
+        }
+
+        $email->fill($request->all())->save();
+        $email->fill(['media' => $pathFile])->save();
+
+        return redirect()->route('email.edit', $email->id)->with('info','El mensaje fue actualizado con éxito');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $email = Email::find($id)->delete();
+        return back()->with('info','Eliminado correctamente');
     }
 }

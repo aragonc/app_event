@@ -7,7 +7,7 @@
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
 
-    {!! Form::model($email,['route' => ['category.update', $email->id],
+    {!! Form::model($email,['route' => ['email.update', $email->id],
     'method' => 'PUT', 'files' => true]) !!}
     @include('emails.partials.form')
     {!! Form::close() !!}

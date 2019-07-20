@@ -47,11 +47,11 @@
     </div>
     <div class="col-md-4">
 
-        @if(isset($email->image))
+        @if(isset($email->media))
             <div class="card card-image">
                 <div class="card-body">
                     <div class="image-announcement">
-                        <img src="{{ Storage::url($email->image) }}"  class="img-fluid"/>
+                        <img src="{{ Storage::url($email->media) }}"  class="img-fluid"/>
                     </div>
                     <div class="form-group form-check check-delete">
                         <input name="delete_image" type="checkbox" value="true" class="form-check-input" id="delete_image">
