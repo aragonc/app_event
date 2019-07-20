@@ -20,19 +20,12 @@ class CreateEmailsTable extends Migration
             $table->mediumText('content')->nullable();
             $table->string('media')->nullable();
             $table->string('brochure')->nullable();
-            $table->integer('category_id')->unsigned();
             $table->enum('type',['default','reminder'])->default('default');
             $table->timestamps();
 
             $table->foreign('event_id')
                 ->references('id')
                 ->on('events')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

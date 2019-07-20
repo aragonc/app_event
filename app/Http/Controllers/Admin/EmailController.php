@@ -31,6 +31,7 @@ class EmailController extends Controller
     public function create()
     {
         $events = Event::all();
+
         return view('emails.create', compact('events'));
     }
 
