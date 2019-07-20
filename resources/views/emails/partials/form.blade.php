@@ -32,6 +32,18 @@
             {{ Form::textarea('content', null, ['class' => 'form-control ckeditor', 'id' => 'content']) }}
         </div>
 
+        <div class="form-group">
+            <div class="form-check form-check-inline">
+                {{ Form::radio('type', 'default', true, ['class' => 'form-check-input', 'id' => 'type-default']) }}
+                {{ Form::label('type-default','Principal', ['class' => 'form-check-label']) }}
+
+            </div>
+            <div class="form-check form-check-inline">
+                {{ Form::radio('type', 'reminder', null, ['class' => 'form-check-input', 'id' => 'status-reminder']) }}
+                {{ Form::label('type-draft','Recordatorio', ['class' => 'form-check-label']) }}
+            </div>
+        </div>
+
     </div>
     <div class="col-md-4">
 

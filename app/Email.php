@@ -11,11 +11,17 @@ class Email extends Model
         'title',
         'content',
         'media',
-        'brochure'
+        'brochure',
+        'type',
+        'category_id'
     ];
 
     public function event(){
         return $this->belongsTo(Event::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 
 }
