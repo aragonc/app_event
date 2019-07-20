@@ -12,23 +12,23 @@
         </tr>
     </table>
 
-    <h2>Bienvenido!</h2>
+    <h3>Gracias por solicitad información!</h3>
     <p>Sea bienvenido(a): <strong>{{ $name }}</strong> </p>
 
     {!! $content !!}
 
+    @if($brochure)
     <table style="border: none; width: 100%; padding: 2rem;">
         <tr>
             <td style="text-align: center">
+                <p>Por favor haga clic en el siguiente botón:</p>
                 <a target="_blank" href="{{ $brochure }}">
                     <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
                 </a>
             </td>
         </tr>
     </table>
-
-    <p>Nuestra misión es ayudarle a fortalecer tu desarrollo personal y profesional.</p>
-    <p><i>Grupo Excellentia</i></p>
+    @endif
 
     <table style="padding:0; width: 100%">
         <tr>
@@ -37,7 +37,6 @@
             </td>
         </tr>
     </table>
-
 
     <!-- FIN DE CONTENIDO -->
 @endsection
