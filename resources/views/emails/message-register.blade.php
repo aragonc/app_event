@@ -32,7 +32,7 @@
 
     <table style="padding:0; width: 100%">
         <tr>
-            <td>
+            <td style="text-align: center;">
                 <img src="{{ url(Storage::url($school)) }}"/>
             </td>
         </tr>
