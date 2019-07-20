@@ -40,7 +40,8 @@ class MessageRegister extends Mailable
                         'event_title' => $this->event->title,
                         'brochure' => $this->event->brochure,
                         'content' => $this->event->content,
-                        'banner' => $this->event->media
+                        'banner' => $this->event->media,
+                        'school' => $this->event->category->image
                     ]);
     }
 }

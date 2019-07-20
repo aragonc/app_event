@@ -28,7 +28,16 @@
     </table>
 
     <p>Nuestra misión es ayudarle a fortalecer tu desarrollo personal y profesional.</p>
-
     <p><i>Grupo Excellentia</i></p>
+
+    <table style="padding:0; width: 100%">
+        <tr>
+            <td>
+                <img src="{{ url(Storage::url($school)) }}"/>
+            </td>
+        </tr>
+    </table>
+
+
     <!-- FIN DE CONTENIDO -->
 @endsection
