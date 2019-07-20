@@ -7,7 +7,7 @@
     <table style="padding:0; width: 100%">
         <tr>
             <td>
-                <img src="{{ $banner }}"/>
+                <img src="{{ url(Storage::url($banner)) }}"/>
             </td>
         </tr>
     </table>
