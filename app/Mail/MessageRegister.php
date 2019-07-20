@@ -11,7 +11,7 @@ class MessageRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Gracias por registrarte';
+    public $subject;
     public $people;
     public $event;
 
@@ -25,6 +25,7 @@ class MessageRegister extends Mailable
     {
         $this->people = $people;
         $this->event = $event;
+        $this->subject = 'INFORMES: '.$event->title;
     }
 
     /**
