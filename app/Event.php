@@ -23,6 +23,9 @@ class Event extends Model
         'secondary_color',
         'embed',
         'terms',
+        'content',
+        'media',
+        'brochure',
         'status'
     ];
     public function category(){
@@ -31,5 +34,4 @@ class Event extends Model
     public function clients(){
         return $this->hasMany(People::class);
     }
-
 }

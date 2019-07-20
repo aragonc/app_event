@@ -49,6 +49,7 @@ class EventController extends Controller
     {
         $pathFile = null;
         $pathFileTwo = null;
+        $pathMedia = null;
 
         //Comprobamos que enviamos la imagen y que no este vacia
         if($request->hasFile('image_top')){
@@ -77,10 +78,24 @@ class EventController extends Controller
             }
         }
 
+        if($request->hasFile('media')){
+            $file3 = $request->file('media');
+
+            //comprobamos que la imagen tenga el tamaño correcto 600 x 144
+            $image3 = Image::make($file3->getRealPath());
+            if($image3->getWidth() != '600' and $image3->getHeight() !='144'){
+                return back()->with('error','La imagen debe ser de 600 x 144 pixeles');
+            } else {
+                $name3 = time().'_event_'.$file3->getClientOriginalName();
+                $pathMedia = $file3->storeAs('public/upload/event',$name3);
+            }
+        }
+
         //Creamos el evento y agregamos la imagen al registro
         $event = Event::create($request->all());
         $event->fill(['image_top' => $pathFile])->save();
         $event->fill(['image_bottom' => $pathFileTwo])->save();
+        $event->fill(['media' => $pathMedia])->save();
 
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue creado con éxito');
 
@@ -121,6 +136,7 @@ class EventController extends Controller
     {
         $pathFile = null;
         $pathFile2 = null;
+        $pathFile3 = null;
         $message =  null;
 
         $event = Event::find($id);
@@ -128,9 +144,10 @@ class EventController extends Controller
         //Verificamos que la image desea ser borrada
         $deleteImage1 = $request->has('delete_top');
         $deleteImage2 = $request->has('delete_bottom');
+        $deleteImage3 = $request->has('delete_media');
 
         //Eliminamos la imagen superior o inferior
-        $deleted1 = $deleted2 = false;
+        $deleted1 = $deleted2 = $deleted3 = false;
 
         if($deleteImage1){
             $fullPath1 = $event->image_top;
@@ -147,7 +164,17 @@ class EventController extends Controller
                 $event->fill(['image_bottom' => $pathFile2])->save();
             }
         }
-        if($deleted1 or $deleted2){
+
+        if($deleteImage3){
+            $fullPath3 = $event->media;
+            $deleted3 = Storage::delete($fullPath3);
+            if($deleted3){
+                $event->fill(['media' => $pathFile3])->save();
+            }
+        }
+
+
+        if($deleted1 or $deleted2 or $deleted3){
             return back()->with('info','La imagen fue eliminada');
         }
 
@@ -166,11 +193,7 @@ class EventController extends Controller
                 //$event->fill($request->all())->save();
                 $event->fill(['image_top' => $pathFile])->save();
             }
-        }else{
-            $event->fill($request->all())->save();
-        }
-
-        if($request->hasFile('image_bottom')){
+        }elseif($request->hasFile('image_bottom')){
             $file2 = $request->file('image_bottom');
 
             // Comprobamos que tenga el tamaño correcto
@@ -180,15 +203,25 @@ class EventController extends Controller
             } else {
                 $name2 = time().'_event_'.$file2->getClientOriginalName();
                 $pathFile2 = $file2->storeAs('public/upload/event',$name2);
+                $event->fill(['image_bottom' => $pathFile2])->save();
+            }
+        }elseif($request->hasFile('media')){
+            $file3 = $request->file('media');
+
+            // Comprobamos que tenga el tamaño correcto
+            $image3 = Image::make($file3->getRealPath());
+            if($image3->getWidth() != '600' and $image3->getHeight() !='144'){
+                return back()->with('error','La imagen debe ser de 600 x 144 pixeles');
+            } else {
+                $name3 = time().'_event_'.$file3->getClientOriginalName();
+                $pathFile3 = $file3->storeAs('public/upload/event',$name3);
 
                 //$event->fill($request->all())->save();
-                $event->fill(['image_bottom' => $pathFile2])->save();
+                $event->fill(['media' => $pathFile3])->save();
             }
         }else{
             $event->fill($request->all())->save();
         }
-
-
 
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue actualizado con éxito');
 

@@ -19,6 +19,7 @@ class MessageRegister extends Mailable
      * Create a new message instance.
      *
      * @param $people
+     * @param $event
      */
     public function __construct($people, $event)
     {
@@ -36,7 +37,9 @@ class MessageRegister extends Mailable
         return $this->view('emails.message-register')
                     ->with([
                         'name' => $this->people->name,
-                        'event_title' => $this->event->title
+                        'event_title' => $this->event->title,
+                        'brochure' => $this->event->brochure,
+                        'content' => $this->event->content
                     ]);
     }
 }

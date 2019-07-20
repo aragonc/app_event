@@ -31,6 +31,9 @@ class CreateEventsTable extends Migration
             $table->string('primary_color')->nullable();
             $table->string('secondary_color')->nullable();
             $table->mediumText('terms')->nullable();
+            $table->mediumText('content')->nullable();
+            $table->string('media')->nullable();
+            $table->string('brochure')->nullable();
             $table->enum('status',['published','draft'])->default('draft');
             $table->timestamps();
 

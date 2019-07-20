@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Email;
 use App\Event;
 use App\Mail\MessageRegister;
 use App\People;

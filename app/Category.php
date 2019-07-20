@@ -15,8 +15,5 @@ class Category extends Model
     public function events(){
         return $this->hasMany(Event::class);
     }
-    public function emails(){
-        return $this->hasMany(Email::class);
-    }
 
 }

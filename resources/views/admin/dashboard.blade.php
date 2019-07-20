@@ -30,16 +30,6 @@
         </div>
         <div class="col-md-2">
             <div class="tool">
-                <a href="{{ route('email.index') }}">
-                    <img width="64px" src="{{ asset('img/svg/email.svg') }}" class="tool-icon">
-                    <h6 class="tool-title">
-                        Mensajes
-                    </h6>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="tool">
                 <a href="{{ route('people.index') }}">
                     <img width="64px" src="{{ asset('img/svg/person.svg') }}" class="tool-icon">
                     <h6 class="tool-title">

@@ -81,6 +81,11 @@
         </div>
 
         <div class="form-group">
+            {{ Form::label('brochure', 'URL del brochure (https://)') }}
+            {{ Form::text('brochure', null, ['class' => 'form-control', 'id' => 'brochure']) }}
+        </div>
+
+        <div class="form-group">
             {{ Form::label('thematic', 'Descripción del evento') }}
             {{ Form::textarea('thematic', null, ['class' => 'form-control ckeditor', 'id' => 'thematic']) }}
         </div>
@@ -97,6 +102,11 @@
         <div class="form-group">
             {{ Form::label('terms', 'Términos y condiciones') }}
             {{ Form::textarea('terms', null, ['class' => 'form-control ckeditor', 'id' => 'terms']) }}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('content', 'Contenido para email') }}
+            {{ Form::textarea('content', null, ['class' => 'form-control ckeditor', 'id' => 'content']) }}
         </div>
 
         <div class="form-group">
@@ -155,6 +165,28 @@
                     {{ Form::file('image_bottom', ['class' => '', 'id' => 'image_bottom']) }}
                 </div>
                 <small class="form-text text-muted">La imagen debe ser de 1440 x 1024 pixeles.</small>
+            </div>
+        @endif
+
+        @if(isset($event->media))
+            <div class="card card-image">
+                <div class="card-body">
+                    <div class="image-announcement">
+                        <img src="{{ Storage::url($event->media) }}"  class="img-fluid"/>
+                    </div>
+                    <div class="form-group form-check check-delete">
+                        <input name="delete_media" type="checkbox" value="true" class="form-check-input" id="delete_media">
+                        <label class="form-check-label" for="delete_media">Eliminar esta imagen</label>
+                    </div>
+                </div>
+            </div>
+        @else
+            <div class="form-group">
+                {{ Form::label('media', 'Cargar imagen') }}
+                <div class="custom-file">
+                    {{ Form::file('media', ['class' => '', 'id' => 'image_upload']) }}
+                </div>
+                <small class="form-text text-muted">Subir una imagen debe ser de 600 x 144 pixeles .</small>
             </div>
         @endif
 
