@@ -6,13 +6,13 @@
     <h2>Bienvenido!</h2>
     <p>Sea bienvenido(a): <strong>{{ $name }}</strong> </p>
 
-    {{ $content }}
+    {!! $content !!}
 
-    <table style="border: none;">
+    <table style="border: none; width: 100%; padding: 2rem;">
         <tr>
             <td style="text-align: center">
                 <a target="_blank" href="{{ $brochure }}">
-                    <img src="{{ asset('img/btn_pdf.png') }}" width="300px">
+                    <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
                 </a>
             </td>
         </tr>
