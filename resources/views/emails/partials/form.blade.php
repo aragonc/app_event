@@ -65,7 +65,7 @@
                 <div class="custom-file">
                     {{ Form::file('media', ['class' => '', 'id' => 'image_upload']) }}
                 </div>
-                <small class="form-text text-muted">Subir una imagen debe ser de 425 x 90 pixeles .</small>
+                <small class="form-text text-muted">Subir una imagen debe ser de 600 x 144 pixeles .</small>
             </div>
         @endif
 

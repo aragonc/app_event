@@ -98,8 +98,9 @@ class EmailController extends Controller
 
         //Verificamos que la image desea ser borrada
         $deleteImage = $request->has('delete_image');
+
         if($deleteImage){
-            $fullPath = $email->image;
+            $fullPath = $email->media;
             $deleted = Storage::delete($fullPath);
             if($deleted){
                 $email->fill(['media' => $pathFile])->save();
@@ -118,11 +119,11 @@ class EmailController extends Controller
             } else {
                 $name = uniqid().'_message_'.$file->getClientOriginalName();
                 $pathFile = $file->storeAs('public/upload/message',$name);
+                $email->fill(['media' => $pathFile])->save();
             }
+        } else {
+            $email->fill($request->all())->save();
         }
-
-        $email->fill($request->all())->save();
-        $email->fill(['media' => $pathFile])->save();
 
         return redirect()->route('email.edit', $email->id)->with('info','El mensaje fue actualizado con éxito');
     }

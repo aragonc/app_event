@@ -15,7 +15,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titulo</th>
-                <th width="40%" scope="col">Evento</th>
                 <th scope="col">Banner</th>
                 <th scope="col">Fecha creación</th>
                 <th scope="col">Acciones</th>
@@ -27,15 +26,8 @@
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->title }}</td>
                     <td>
-                        @if($item->description)
-                            {!! $item->description !!}
-                        @else
-                            Sin descripción
-                        @endif
-                    </td>
-                    <td>
-                        @if($item->image)
-                            <img width="250px" src="{{ Storage::url($item->image) }}"  class="img-fluid"/>
+                        @if($item->media)
+                            <img width="300px" src="{{ Storage::url($item->media) }}"  class="img-fluid"/>
                         @else
                             No asignado
                         @endif
