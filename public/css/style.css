@@ -271,6 +271,11 @@ footer{
     #section-1 .column-b{
         display: none;
     }
+    #section-2 .column-b{
+        display: block;
+        flex-wrap: inherit;
+        height: 100%;
+    }
     #section-2 .column-b .form-static{
         display: block;
     }

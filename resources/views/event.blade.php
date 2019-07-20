@@ -93,7 +93,7 @@
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
                                     <label for="name">Nombres y Apellidos (*)</label>
-                                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                                    <input type="text" class="form-control" name="name" placeholder="" id="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="dni">DNI (*)</label>
@@ -221,20 +221,16 @@
                             {!! Form::open(['route' => 'people.store']) !!}
                             <input type="hidden" name="event_id" value="{{ $event->id }}">
                             <div class="form-group">
-                                <label for="name">Nombres y Apellidos (*)</label>
-                                <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" placeholder="Escriba su nombres y apellidos" name="name" id="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label for="dni">DNI (*)</label>
-                                <input type="text" class="form-control" name="dni" id="dni" value="{{ old('dni') }}">
+                                <input type="text" class="form-control" placeholder="Escriba su DNI" name="dni" id="dni" value="{{ old('dni') }}">
                             </div>
                             <div class="form-group">
-                                <label for="email">Correo electronico (*)</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control" name="email" placeholder="Escriba su correo electronico (*)" id="email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Celular (*)</label>
-                                <input type="text" class="form-control" name="phone" id="phone" value="{{ old('phone') }}">
+                                <input type="text" class="form-control" placeholder="Escriba su celular" name="phone" id="phone" value="{{ old('phone') }}">
                             </div>
 
                             <div class="form-group form-check">
