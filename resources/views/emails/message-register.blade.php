@@ -12,7 +12,7 @@
         <tr>
             <td style="text-align: center">
                 <a target="_blank" href="{{ $brochure }}">
-                    <img src="">
+                    <img src="{{ asset('img/btn_pdf.png') }}" width="300px">
                 </a>
             </td>
         </tr>
