@@ -13,7 +13,3 @@
     {!! Form::close() !!}
 
 @endsection
-
-@section('scripts_footer')
-    <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
-@endsection

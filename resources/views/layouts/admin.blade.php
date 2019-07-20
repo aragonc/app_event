@@ -132,7 +132,7 @@
     </main>
 </div>
 <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.js') }}"></script>
-
+<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript">
 
 </script>
