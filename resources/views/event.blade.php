@@ -79,7 +79,7 @@
                     <img src="{{ url(Storage::url($event->category->image)) }}" alt="" class="logo_des">
                 </div>
                 @endif
-                <div class="form-register">
+                <div class="form-register form-top">
                     <div class="card card-register">
                         <div class="card-body">
                             @if($errors->any())
@@ -201,8 +201,69 @@
                 </div>
             </div>
         </div>
-        <div class="column-b movil">
+        <div class="column-b">
+            <div class="form-static">
+                @if($event->category->image)
+                    <div class="logo-category">
+                        <img src="{{ url(Storage::url($event->category->image)) }}" alt="" class="logo_des">
+                    </div>
+                @endif
+                <div class="form-register form-bottom">
+                    <div class="card card-register">
+                        <div class="card-body">
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ $error }}
+                                    </div>
+                                @endforeach
+                            @endif
+                            {!! Form::open(['route' => 'people.store']) !!}
+                            <input type="hidden" name="event_id" value="{{ $event->id }}">
+                            <div class="form-group">
+                                <label for="name">Nombres y Apellidos (*)</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dni">DNI (*)</label>
+                                <input type="text" class="form-control" name="dni" id="dni" value="{{ old('dni') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electronico (*)</label>
+                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Celular (*)</label>
+                                <input type="text" class="form-control" name="phone" id="phone" value="{{ old('phone') }}">
+                            </div>
 
+                            <div class="form-group form-check">
+                                <input type="checkbox" value="yes" class="form-check-input" name="authorize" id="authorize">
+                                <label class="form-check-label" for="authorize">
+                                    Autorizo a utilizar datos para los fines
+                                    mencionados.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-primary">Solicitar información</button>
+
+                            {!! Form::close() !!}
+
+                            @if(session('info'))
+                                <div class="alert alert-success">
+                                    {{ session('info') }}
+                                </div>
+                            @endif
+
+                            <div class="terms">
+                                @if($event->terms)
+                                    <a class="modal-terms" href="#" id="terms-modal" data-toggle="modal" data-target="#modal-terms">Ver términos y condiciones</a>
+                                @endif
+                                <p>(*) Campos obligatorios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

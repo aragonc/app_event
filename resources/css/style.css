@@ -167,14 +167,13 @@ footer{
     background: #ffffff;
     padding: 0;
 }
-
+#section-2 .column-b{
+    display: none;
+}
+#section-1 .column-b{
+    display: block;
+}
 @media (min-width: 1024px){
-    /*.banner{
-        background-image: url(images/fondo.jpg);
-    }
-    #section-2.banner{
-        background-image: url(images/fondo2.jpg);
-    }*/
     .mask{
         height: 100vh;
         background-color: rgba(0, 34, 97, 0.6);
@@ -236,6 +235,12 @@ footer{
         display: flex;
         justify-content: center;
     }
+    #section-1 .column-b{
+        display: none;
+    }
+    #section-2 .column-b{
+        display: block;
+    }
 }
 @media (max-width: 480px) {
     .mask{
@@ -257,5 +262,16 @@ footer{
     }
     .form-register{
         padding: 0;
+    }
+    .banner{
+        background-position: -100px 0;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    #section-1 .column-b{
+        display: none;
+    }
+    #section-2 .column-b{
+        display: block;
     }
 }
