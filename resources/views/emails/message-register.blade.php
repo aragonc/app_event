@@ -3,6 +3,15 @@
 @endsection
 @section('content')
     <!-- CONTENIDO -->
+
+    <table style="padding:0; width: 100%">
+        <tr>
+            <td>
+                <img src="{{ $banner }}"/>
+            </td>
+        </tr>
+    </table>
+
     <h2>Bienvenido!</h2>
     <p>Sea bienvenido(a): <strong>{{ $name }}</strong> </p>
 
@@ -19,6 +28,7 @@
     </table>
 
     <p>Nuestra misión es ayudarle a fortalecer tu desarrollo personal y profesional.</p>
+
     <p><i>Grupo Excellentia</i></p>
     <!-- FIN DE CONTENIDO -->
 @endsection

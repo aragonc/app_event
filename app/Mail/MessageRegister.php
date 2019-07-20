@@ -39,7 +39,8 @@ class MessageRegister extends Mailable
                         'name' => $this->people->name,
                         'event_title' => $this->event->title,
                         'brochure' => $this->event->brochure,
-                        'content' => $this->event->content
+                        'content' => $this->event->content,
+                        'banner' => $this->event->media
                     ]);
     }
 }
