@@ -251,8 +251,10 @@ footer{
         position: relative;
     }
     footer{
-        position: relative;
-        z-index: 3;
+        position: inherit;
+        z-index: inherit;
+        display: inline-block;
+        width: 100%;
     }
     .event .title{
         font-size: 2rem;
