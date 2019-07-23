@@ -106,6 +106,7 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $people = People::find($id)->delete();
+        return back()->with('info','Eliminado correctamente');
     }
 }
