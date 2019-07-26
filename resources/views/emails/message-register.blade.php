@@ -12,7 +12,7 @@
         </tr>
     </table>
 
-    <h3>Gracias por solicitad información!</h3>
+    <h3>Gracias por solicitar información.</h3>
     <p>Sea bienvenido(a): <strong>{{ $name }}</strong> </p>
 
     {!! $content !!}
@@ -25,6 +25,7 @@
                 <a target="_blank" href="{{ $brochure }}">
                     <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
                 </a>
+                <p style="font-style: italic">Por favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
             </td>
         </tr>
     </table>

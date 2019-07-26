@@ -43,11 +43,6 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="https://twitter.com/excellentiaorg" target="_blank">
-                                            <img src="{{ asset('img/twitter.png') }}">
-                                        </a>
-                                    </td>
-                                    <td>
                                         <a href="https://www.youtube.com/channel/UCpwdnKFWIUKFasmA_c7cZ1w" target="_blank">
                                             <img src="{{ asset('img/youtube.png') }}">
                                         </a>
