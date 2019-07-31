@@ -37,12 +37,12 @@
                         <td>
                             <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 20%; margin:auto;">
                                 <tr>
-                                    <td>
+                                    <td style="text-align: center">
                                         <a href="https://www.facebook.com/GrupoExcellentia/" target="_blank">
                                             <img src="{{ asset('img/facebook.png') }}">
                                         </a>
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <a href="https://www.youtube.com/channel/UCpwdnKFWIUKFasmA_c7cZ1w" target="_blank">
                                             <img src="{{ asset('img/youtube.png') }}">
                                         </a>

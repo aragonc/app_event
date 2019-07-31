@@ -25,7 +25,7 @@
                 <a target="_blank" href="{{ $brochure }}">
                     <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
                 </a>
-                <p style="font-style: italic">Por favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
+                <p style="font-style: italic">Por1 favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
             </td>
         </tr>
     </table>
