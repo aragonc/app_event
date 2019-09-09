@@ -7,7 +7,7 @@
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
 
-    {!! Form::model($event,['route' => ['user.update', $event->id],
+    {!! Form::model($user,['route' => ['user.update', $user->id],
     'method' => 'PUT', 'files' => true]) !!}
     @include('user.partials.form')
     {!! Form::close() !!}

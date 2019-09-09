@@ -16,7 +16,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Email</th>
-                <th scope="col">Tipo</th>
                 <th scope="col">Fecha de registro</th>
                 <th scope="col">Acciones</th>
             </tr>
@@ -27,7 +26,6 @@
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
-                    <td>{{ $item->status }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>
                         <div class="actions">
