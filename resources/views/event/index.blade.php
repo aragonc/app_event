@@ -14,12 +14,12 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
+                <th scope="col" width="30%">Nombre</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Fecha creación</th>
-                <th scope="col">Acciones</th>
+                <th scope="col" width="12%">Acciones</th>
             </tr>
             </thead>
             <tbody>

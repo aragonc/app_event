@@ -21,10 +21,18 @@
     <table style="border: none; width: 100%; padding: 2rem;">
         <tr>
             <td style="text-align: center">
-                <p>Clic en el siguiente botón:</p>
-                <a target="_blank" href="{{ $brochure }}">
-                    <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
-                </a>
+                @if($whatsapp)
+                    <p>Quieres saber más?</p>
+                    <a target="_blank" href="https://wa.me/51{{ $phone }}">
+                        <img src="{{ asset('img/btn_wps.png') }}" width="250px">
+                    </a>
+                @else
+                    <p>Clic en el siguiente botón:</p>
+                    <a target="_blank" href="{{ $brochure }}">
+                        <img src="{{ asset('img/btn_pdf.png') }}" width="200px">
+                    </a>
+                @endif
+
                 <p style="font-style: italic">Por favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
             </td>
         </tr>

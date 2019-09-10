@@ -42,7 +42,10 @@ class MessageRegister extends Mailable
                         'brochure' => $this->event->brochure,
                         'content' => $this->event->content,
                         'banner' => $this->event->media,
-                        'school' => $this->event->category->image
+                        'school' => $this->event->category->image,
+                        'phone' => $this->event->contact_phone,
+                        'whatsapp' => $this->event->whatsapp,
+                        'background' => $this->event->email_color
                     ]);
     }
 }
