@@ -9,12 +9,18 @@ class PageController extends Controller
 {
     public function post($slug){
         $event = Event::where('slug',$slug)->first();
-        $status = $event->status;
-        if($status == 'published'){
-            return view('event', compact('event'));
-        } else {
+
+        if(empty($event)){
             return abort(404);
+        }else{
+            $status = $event->status;
+            if($status == 'published'){
+                return view('event', compact('event'));
+            } else {
+                return abort(404);
+            }
         }
+
 
     }
 }
