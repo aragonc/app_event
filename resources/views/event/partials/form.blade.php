@@ -135,12 +135,10 @@
             <div class="form-check form-check-inline">
                 {{ Form::radio('status', 'published', true, ['class' => 'form-check-input', 'id' => 'status-published']) }}
                 {{ Form::label('status-published','Publicado', ['class' => 'form-check-label']) }}
-
             </div>
             <div class="form-check form-check-inline">
                 {{ Form::radio('status', 'draft', null, ['class' => 'form-check-input', 'id' => 'status-draft']) }}
                 {{ Form::label('status-draft','Borrador', ['class' => 'form-check-label']) }}
-
             </div>
         </div>
     </div>
