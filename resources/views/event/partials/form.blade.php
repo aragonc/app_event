@@ -48,7 +48,7 @@
                     {{ Form::text('contact_email', null, ['class' => 'form-control', 'id' => 'contact_email']) }}
                 </div>
                 <div class="form-group">
-                    {{ Form::label('contact_phone', 'Télefono contacto') }}
+                    {{ Form::label('contact_phone', 'Télefono / WhatsApp') }}
                     {{ Form::text('contact_phone', null, ['class' => 'form-control', 'id' => 'contact_phone']) }}
                 </div>
             </div>
@@ -80,9 +80,31 @@
             </div>
         </div>
 
-        <div class="form-group">
-            {{ Form::label('brochure', 'URL del brochure (https://)') }}
-            {{ Form::text('brochure', null, ['class' => 'form-control', 'id' => 'brochure']) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ Form::label('brochure', 'URL del brochure (https://)') }}
+                    {{ Form::text('brochure', null, ['class' => 'form-control', 'id' => 'brochure']) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                @php
+                    if(isset($event)){
+                        $colorEmail = ($event->email_color === null) ? '#ededed' : $event->email_color;
+                    } else {
+                        $colorEmail = null;
+                    }
+                @endphp
+                {{ Form::label('email_color', 'Color de fondo email') }}
+                {{ Form::input('color','email_color',$colorEmail, array('class' => 'form-control','id' => 'email_color')) }}
+            </div>
+        </div>
+
+
+
+        <div class="form-group form-check">
+            {{ Form::checkbox('whatsapp', true, false, ['class'=>'form-check-input']) }}
+            {{ Form::label('whatsapp', 'Convertir de botón de descarga brochure a botón WhatsApp', ['class'=>'form-check-label']) }}
         </div>
 
         <div class="form-group">
