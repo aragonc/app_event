@@ -100,13 +100,6 @@
             </div>
         </div>
 
-
-
-        <div class="form-group form-check">
-            {{ Form::checkbox('whatsapp', true, false, ['class'=>'form-check-input']) }}
-            {{ Form::label('whatsapp', 'Convertir de botón de descarga brochure a botón WhatsApp', ['class'=>'form-check-label']) }}
-        </div>
-
         <div class="form-group">
             {{ Form::label('thematic', 'Descripción del evento') }}
             {{ Form::textarea('thematic', null, ['class' => 'form-control ckeditor', 'id' => 'thematic']) }}

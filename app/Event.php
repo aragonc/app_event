@@ -27,8 +27,7 @@ class Event extends Model
         'media',
         'brochure',
         'status',
-        'email_color',
-        'whatsapp'
+        'email_color'
     ];
     public function category(){
         return $this->belongsTo(Category::class);

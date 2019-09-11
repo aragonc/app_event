@@ -44,7 +44,6 @@ class MessageRegister extends Mailable
                         'banner' => $this->event->media,
                         'school' => $this->event->category->image,
                         'phone' => $this->event->contact_phone,
-                        'whatsapp' => $this->event->whatsapp,
                         'background' => $this->event->email_color
                     ]);
     }

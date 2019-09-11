@@ -14,7 +14,6 @@ class UdapteTableEvents extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table){
-            $table->boolean('whatsapp')->default(0)->after('terms');
             $table->string('email_color')->nullable()->after('secondary_color');
         });
     }
@@ -27,7 +26,7 @@ class UdapteTableEvents extends Migration
     public function down()
     {
         Schema::table('events', function (Blueprint $table){
-            $table->dropColumn(['whatsapp','email_color']);
+            $table->dropColumn(['email_color']);
         });
     }
 }
