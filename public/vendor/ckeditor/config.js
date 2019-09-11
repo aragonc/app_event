@@ -15,5 +15,7 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'about', groups: [ 'about' ] }
     ];
 
-    config.removeButtons = 'Subscript,Superscript,PasteText,Scayt,Anchor,SpecialChar,HorizontalRule,Styles,RemoveFormat,Strike,Indent,Outdent,About,EasyImageUpload';
+    config.removeButtons = 'Subscript,Superscript,PasteText,Scayt,Anchor,SpecialChar,HorizontalRule,Styles,RemoveFormat,Strike,Indent,Outdent,About';
+    config.removePlugins = 'easyimage, image';
+    config.extraPlugins = 'image2';
 };
