@@ -8,7 +8,9 @@
     </a>
 @endsection
 @section('content')
-
+    <div class="alert alert-warning" role="alert">
+        Si desea ocultar un evento, es recomendable colocarlo a "No publicado", no es recomendable borrar un evento al menos que este seguro.
+    </div>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -41,7 +43,7 @@
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                             {!! Form::open(['route' => ['event.destroy', $item->id], 'id' => 'form-deleted-'.$item->id, 'method' => 'DELETE']) !!}
-                            <button data-form="form-deleted-{{$item->id}}" class="btn btn-danger deleted-btn btn-sm">
+                            <button onclick="javascript:if(!confirm('Si borras el evento, los usuarios registrados también serán borrados')) return false;" data-form="form-deleted-{{$item->id}}" class="btn btn-danger deleted-btn btn-sm">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                             {!! Form::close() !!}

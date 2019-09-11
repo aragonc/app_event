@@ -131,7 +131,7 @@
             </div>
             <div class="form-check form-check-inline">
                 {{ Form::radio('status', 'draft', null, ['class' => 'form-check-input', 'id' => 'status-draft']) }}
-                {{ Form::label('status-draft','Borrador', ['class' => 'form-check-label']) }}
+                {{ Form::label('status-draft','No publicado', ['class' => 'form-check-label']) }}
             </div>
         </div>
     </div>
