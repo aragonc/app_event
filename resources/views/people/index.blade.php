@@ -54,4 +54,5 @@
             </tbody>
         </table>
     </div>
+    {{ $peoples->links() }}
 @endsection
