@@ -8,6 +8,7 @@ use App\Mail\MessageRegister;
 use App\People;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 
 class PeopleController extends Controller
@@ -50,17 +51,22 @@ class PeopleController extends Controller
                 'authorize' => 'required'
             ]
         );
+        //Limpiamos la session
+        session()->flush();
+        //Verificamos  si el email existe o no
+        $people = People::where('email','=',Input::get('email'))->first();
+        if($people != null){
+            session()->put('info','El correo ya se encuentra registrado...');
+            return redirect()->back();
+        } else {
+            $people = People::create($request->all());
+            $event = Event::find($people->event_id);
+            $email = $people->email;
+            Mail::to($email)->send(new MessageRegister($people,$event));
+            session()->put('notify','Email enviado');
 
-        $people = People::create($request->all());
-        $event = Event::find($people->event_id);
-        $email = $people->email;
-        //die($people->email);
-
-        //enviar Email de registro
-        Mail::to($email)->send(new MessageRegister($people,$event));
-        session()->put('notify','Email enviado');
-
-        return redirect()->back();
+            return redirect()->back();
+        }
 
     }
 

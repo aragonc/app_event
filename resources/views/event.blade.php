@@ -89,6 +89,12 @@
                                     </div>
                                 @endforeach
                             @endif
+                            @if(session('info'))
+                                <div class="alert alert-success">
+                                    {{ session('info') }}
+                                </div>
+                            @endif
+
                             {!! Form::open(['route' => 'people.store']) !!}
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
@@ -119,11 +125,7 @@
 
                             {!! Form::close() !!}
 
-                            @if(session('info'))
-                                <div class="alert alert-success">
-                                    {{ session('info') }}
-                                </div>
-                            @endif
+
 
                             <div class="terms">
                                 @if($event->terms)
@@ -218,6 +220,12 @@
                                     </div>
                                 @endforeach
                             @endif
+                            @if(session('info'))
+                                <div class="alert alert-success">
+                                    {{ session('info') }}
+                                </div>
+                            @endif
+
                             {!! Form::open(['route' => 'people.store']) !!}
                             <input type="hidden" name="event_id" value="{{ $event->id }}">
                             <div class="form-group">
@@ -243,12 +251,6 @@
                             <button type="submit" class="btn btn-block btn-primary">Solicitar información</button>
 
                             {!! Form::close() !!}
-
-                            @if(session('info'))
-                                <div class="alert alert-success">
-                                    {{ session('info') }}
-                                </div>
-                            @endif
 
                             <div class="terms">
                                 @if($event->terms)
