@@ -48,13 +48,14 @@ class PeopleController extends Controller
                 'dni' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required',
-                'authorize' => 'required'
+                'authorize' => 'required',
+                'event_id' => 'required'
             ]
         );
         //Limpiamos la session
         session()->flush();
         //Verificamos  si el email existe o no
-        $people = People::where('email','=',Input::get('email'))->first();
+        $people = People::where('email','=',Input::get('email'))->where('event_id','=',Input::get('event_id') )->first();
         if($people != null){
             session()->put('info','El correo ya se encuentra registrado...');
             return redirect()->back();
