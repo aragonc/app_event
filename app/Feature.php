@@ -11,7 +11,8 @@ class Feature extends Model
         'title',
         'content',
         'extra',
-        'visible'
+        'visible',
+        'icon'
     ];
     public function event(){
         return $this->belongsTo(Event::class);

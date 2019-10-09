@@ -15,10 +15,12 @@ class CreateFeaturesTable extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 250);
-            $table->mediumText('content')->nullable();
-            $table->mediumText('extra')->nullable();
-            $table->boolean('visible');
+            $table->integer('event_id')->unsigned();
+            $table->string('feature_title', 250);
+            $table->mediumText('feature_content')->nullable();
+            $table->mediumText('feature_extra')->nullable();
+            $table->boolean('feature_visible');
+            $table->string('feature_icon', 250);
             $table->timestamps();
         });
     }

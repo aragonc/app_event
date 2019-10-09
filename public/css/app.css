@@ -13872,3 +13872,7 @@ a.text-dark:focus {
   box-shadow: 10px 5px 5px 1px #cdcdcd;
 }
 
+.add-feature {
+  padding: 1rem 0.5rem;
+}
+

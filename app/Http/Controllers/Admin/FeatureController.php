@@ -36,14 +36,15 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         $values = $request;
-        $direction = Feature::create([
+        $feature = Feature::create([
             'event_id' => $values['event_id'],
             'title' => $values['title'],
             'content' => $values['content'],
             'extra' => $values['extra'],
             'visible' => $values['visible'],
+            'icon' => $values['icon']
         ]);
-        return response()->json($direction);
+        return response()->json($feature);
     }
 
     /** Update Feature */
