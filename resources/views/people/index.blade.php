@@ -15,9 +15,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">DNI</th>
-                <th scope="col">Email</th>
-                <th scope="col">Celular/Telefono</th>
+                <th scope="col" >Email / Télefono</th>
+                <th scope="col">País</th>
                 <th scope="col">Evento</th>
                 <th scope="col">Autorización</th>
                 <th scope="col">Fecha de registro</th>
@@ -28,10 +27,15 @@
             @foreach($peoples as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->dni }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->phone }}</td>
+                    <td>
+                        <strong>{{ $item->name }}</strong><br>
+                        {{ $item->dni }}
+                    </td>
+                    <td>
+                        {{ $item->email }}<br>
+                        {{ $item->phone }}
+                    </td>
+                    <td>{{ $item->country }}</td>
                     <td>{{ $item->event->title }}</td>
                     <td>{{ $item->authorize }}</td>
                     <td>{{ $item->created_at }}</td>
