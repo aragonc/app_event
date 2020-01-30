@@ -98,25 +98,33 @@
                             {!! Form::open(['route' => 'people.store']) !!}
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
-                                    <label for="name">Nombres y Apellidos (*)</label>
-                                    <input type="text" class="form-control" name="name" placeholder="" id="name" value="{{ old('name') }}">
+                                    <label for="name_form">Nombres y Apellidos (*)</label>
+                                    <input type="text" class="form-control" name="name" placeholder="" id="name_form" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="dni">DNI (*)</label>
-                                    <input type="text" class="form-control" name="dni" id="dni" value="{{ old('dni') }}">
+                                    <label for="dni_form">DNI (*)</label>
+                                    <input type="text" class="form-control" name="dni" id="dni_form" value="{{ old('dni') }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country">Pais (*)</label>
+                                    <select class="form-control" name="country" id="country">
+                                        <option>--- Selecciona tu pais ----</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email_form">Correo electronico (*)</label>
+                                    <input type="email" class="form-control" name="email" id="email_form" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Correo electronico (*)</label>
-                                    <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Celular (*)</label>
-                                    <input type="text" class="form-control" name="phone" id="phone" value="{{ old('phone') }}">
+                                    <label for="phone_form">Celular (*)</label>
+                                    <input type="text" class="form-control" name="phone" id="phone_form" value="{{ old('phone') }}">
                                 </div>
 
                                 <div class="form-group form-check">
-                                    <input type="checkbox" value="yes" class="form-check-input" name="authorize" id="authorize">
-                                    <label class="form-check-label" for="authorize">
+                                    <input type="checkbox" value="yes" class="form-check-input" name="authorize" id="authorize_form">
+                                    <label class="form-check-label" for="authorize_form">
                                         Autorizo a utilizar datos para los fines
                                         mencionados.
                                     </label>
@@ -204,7 +212,7 @@
             </div>
         </div>
         <div class="column-b">
-            <div class="form-static">
+            <div id="people-form" class="form-static">
                 @if($event->category->image)
                     <div class="logo-category">
                         <img src="{{ url(Storage::url($event->category->image)) }}" alt="" class="logo_des">
@@ -269,4 +277,20 @@
 
 @section('terms')
     {!! $event->terms !!}
+@endsection
+
+@section('scripts_footer')
+    <script>
+        $(document).ready(function(){
+            $.getJSON('{{ asset('js/countrys.json') }}', function(data){
+               var out = '<option>---- Selecciona un país ----<option>';
+               for(var i = 0; i < data.length; i++) {
+                    out += '<option value="'+data[i]+'">' +
+                        data[i]
+                        + '</option>';
+                }
+                $('#country').html(out);
+            });
+        });
+    </script>
 @endsection

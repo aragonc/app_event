@@ -48,6 +48,7 @@ class PeopleController extends Controller
                 'dni' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required',
+                'country' => 'required',
                 'authorize' => 'required',
                 'event_id' => 'required'
             ]

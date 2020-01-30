@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function post($slug){
+
         $event = Event::where('slug',$slug)->first();
 
         if(empty($event)){

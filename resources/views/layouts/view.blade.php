@@ -64,6 +64,6 @@
         </div>
     </div>
 </div>
-
+@yield('scripts_footer')
 </body>
 </html>
