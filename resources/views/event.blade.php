@@ -161,7 +161,7 @@
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <i class="fa fa-file-text-o fa-2x fa-fw" aria-hidden="true"></i>
-                                    Tématica
+                                    Presentación
                                 </button>
                             </h2>
                         </div>
