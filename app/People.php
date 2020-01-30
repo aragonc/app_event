@@ -11,6 +11,7 @@ class People extends Model
         'dni',
         'email',
         'phone',
+        'country',
         'authorize',
         'event_id'
     ];

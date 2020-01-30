@@ -22,7 +22,6 @@ class CreatePeopleTable extends Migration
             $table->string('phone')->nullable();
             $table->enum('authorize',['yes','no'])->default('no');
             $table->timestamps();
-
             $table->foreign('event_id')
                 ->references('id')
                 ->on('events')
