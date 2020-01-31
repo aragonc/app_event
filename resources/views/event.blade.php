@@ -108,7 +108,7 @@
 
                                 <div class="form-group">
                                     <label for="country">Pais (*)</label>
-                                    <select class="form-control" name="country" id="country">
+                                    <select class="form-control country_select" name="country" id="country_form">
                                         <option>--- Selecciona tu pais ----</option>
                                     </select>
                                 </div>
@@ -242,6 +242,13 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Escriba su DNI (*)" name="dni" id="dni" value="{{ old('dni') }}">
                             </div>
+
+                            <div class="form-group">
+                                <select class="form-control country_select" name="country" id="country">
+                                    <option>--- Selecciona tu pais ----</option>
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Escriba su correo electronico (*)" id="email" value="{{ old('email') }}">
                             </div>
@@ -289,7 +296,7 @@
                         data[i]
                         + '</option>';
                 }
-                $('#country').html(out);
+                $('.country_select').html(out);
             });
         });
     </script>
