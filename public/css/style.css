@@ -260,6 +260,7 @@ footer{
     }
     .event.text-center{
         text-align: left !important;
+        height: 100vh;
     }
     .event .title{
         font-size: 1.55rem;
@@ -305,7 +306,7 @@ footer{
     }
     .column-a {
         padding: 20px;
-        height: 100vh;
+        height: 100%;
     }
     .bottom-benefits{
         width: 100%;
@@ -313,5 +314,11 @@ footer{
     }
     #scroll_bottom{
         display: none;
+    }
+    .card-accordion .card .card-header{
+        padding: 0;
+    }
+    .card-accordion .card .card-body{
+        font-size: 14px;
     }
 }
