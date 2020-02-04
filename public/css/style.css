@@ -263,10 +263,10 @@ footer{
         height: 100vh;
     }
     .event .title{
-        font-size: 1.55rem;
+        font-size: 1.45rem;
     }
     .event .direction{
-        font-size: 1.2rem;
+        font-size: 1rem;
         width: auto;
     }
     .event .date {
@@ -276,6 +276,7 @@ footer{
     }
     .event .contact{
         margin-bottom: 20vh;
+        font-size: 14px;
     }
     header img{
         width: 215px;
