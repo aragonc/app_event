@@ -305,6 +305,7 @@ footer{
     }
     .column-a {
         padding: 20px;
+        height: 100vh;
     }
     .bottom-benefits{
         width: 100%;
