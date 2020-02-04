@@ -202,11 +202,11 @@
                 <small class="form-text text-muted">Subir una imagen debe ser de 600 x 144 pixeles .</small>
             </div>
         @endif
-        {{--<div class="add-feature">
+        <div class="add-feature">
             <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#features_create">
                 <i class="fas fa-plus"></i> {{ __('Add feature') }}
             </button>
-        </div>--}}
+        </div>
     </div>
 </div>
 <div class="row">

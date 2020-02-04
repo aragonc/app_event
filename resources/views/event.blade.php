@@ -78,10 +78,12 @@
                 <div class="logo-category">
                     <img src="{{ url(Storage::url($event->category->image)) }}" alt="" class="logo_des">
                 </div>
+
                 @endif
                 <div class="form-register form-top">
                     <div class="card card-register">
                         <div class="card-body">
+
                             @if($errors->any())
                                 @foreach($errors->all() as $error)
                                     <div class="alert alert-danger" role="alert">
@@ -94,32 +96,32 @@
                                     {{ session('info') }}
                                 </div>
                             @endif
+                                @if($event->category->description)
+                                <div class="text-description">
+                                    {!! $event->category->description !!}
+                                </div>
+                                @endif
 
                             {!! Form::open(['route' => 'people.store']) !!}
                                 <input type="hidden" name="event_id" value="{{ $event->id }}">
                                 <div class="form-group">
-                                    <label for="name_form">Nombres y Apellidos (*)</label>
-                                    <input type="text" class="form-control" name="name" placeholder="" id="name_form" value="{{ old('name') }}">
+                                    <input type="text" class="form-control" name="name" placeholder="Nombres y Apellidos (*)" id="name_form" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="dni_form">DNI (*)</label>
-                                    <input type="text" class="form-control" name="dni" id="dni_form" value="{{ old('dni') }}">
+                                    <input type="text" class="form-control" name="dni" placeholder="DNI (*)" id="dni_form" value="{{ old('dni') }}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="country">Pais (*)</label>
                                     <select class="form-control country_select" name="country" id="country_form">
                                         <option>--- Selecciona tu pais ----</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email_form">Correo electronico (*)</label>
-                                    <input type="email" class="form-control" name="email" id="email_form" value="{{ old('email') }}">
+                                    <input type="email" class="form-control" name="email" id="email_form" placeholder="Correo electronico (*)" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone_form">Celular (*)</label>
-                                    <input type="text" class="form-control" name="phone" id="phone_form" value="{{ old('phone') }}">
+                                    <input type="text" class="form-control" name="phone" placeholder="Celular (*)" id="phone_form" value="{{ old('phone') }}">
                                 </div>
 
                                 <div class="form-group form-check">
