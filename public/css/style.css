@@ -258,8 +258,20 @@ footer{
         display: inline-block;
         width: 100%;
     }
+    .event.text-center{
+        text-align: left !important;
+    }
     .event .title{
         font-size: 1.75rem;
+    }
+    .event .direction{
+        font-size: 1.2rem;
+        width: auto;
+    }
+    .event .date {
+        font-size: 1.2rem;
+        text-align: left;
+        width: auto;
     }
     .event .contact{
         margin-bottom: 24vh;
@@ -293,5 +305,9 @@ footer{
     }
     .column-a {
         padding: 30px 20px;
+    }
+    .bottom-benefits{
+        width: 100%;
+        text-align: center;
     }
 }
