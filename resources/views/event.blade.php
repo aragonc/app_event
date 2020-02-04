@@ -235,7 +235,11 @@
                                     {{ session('info') }}
                                 </div>
                             @endif
-
+                            @if($event->category->description)
+                                <div class="text-description">
+                                    {!! $event->category->description !!}
+                                </div>
+                            @endif
                             {!! Form::open(['route' => 'people.store']) !!}
                             <input type="hidden" name="event_id" value="{{ $event->id }}">
                             <div class="form-group">
