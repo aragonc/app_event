@@ -310,4 +310,7 @@ footer{
         width: 100%;
         text-align: center;
     }
+    #scroll_bottom{
+        display: none;
+    }
 }
