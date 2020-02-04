@@ -262,7 +262,7 @@ footer{
         text-align: left !important;
     }
     .event .title{
-        font-size: 1.75rem;
+        font-size: 1.55rem;
     }
     .event .direction{
         font-size: 1.2rem;
@@ -274,7 +274,7 @@ footer{
         width: auto;
     }
     .event .contact{
-        margin-bottom: 24vh;
+        margin-bottom: 20vh;
     }
     header img{
         width: 215px;
@@ -304,7 +304,7 @@ footer{
         line-height: 34px;
     }
     .column-a {
-        padding: 30px 20px;
+        padding: 20px;
     }
     .bottom-benefits{
         width: 100%;
