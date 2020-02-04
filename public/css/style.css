@@ -245,7 +245,7 @@ footer{
 @media (max-width: 480px) {
     .mask{
         height: 100%;
-        background-color: rgba(0, 34, 97, 0.6);
+        background-color: rgba(0, 34, 97, 0.4);
         background-image: none;
     }
     .event{
@@ -259,7 +259,10 @@ footer{
         width: 100%;
     }
     .event .title{
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    .event .contact{
+        margin-bottom: 24vh;
     }
     header img{
         width: 215px;
@@ -287,5 +290,8 @@ footer{
     .text-description{
         font-size: 30px;
         line-height: 34px;
+    }
+    .column-a {
+        padding: 30px 20px;
     }
 }
