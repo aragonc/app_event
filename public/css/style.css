@@ -283,4 +283,9 @@ footer{
         display: block;
         padding-bottom: 2rem;
     }
+    .text-description{
+        font-size: 30px;
+        line-height: 34px;
+        font-style: italic;
+    }
 }
