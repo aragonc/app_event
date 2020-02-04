@@ -167,6 +167,7 @@ footer{
 .logo-category{
     background: #ffffff;
     padding: 0;
+    display: none;
 }
 #section-2 .column-b .form-static{
     display: none;
