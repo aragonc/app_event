@@ -278,8 +278,11 @@ footer{
         margin-bottom: 20vh;
         font-size: 14px;
     }
+    header{
+        padding: 0;
+    }
     header img{
-        width: 215px;
+        width: 175px;
     }
     .form-register{
         padding: 0;
