@@ -108,7 +108,7 @@
                                     <input type="text" class="form-control" name="name" placeholder="Nombres y Apellidos (*)" id="name_form" value="{{ old('name') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="dni" placeholder="DNI (*)" id="dni_form" value="{{ old('dni') }}">
+                                    <input type="text" class="form-control" name="dni" placeholder="N° de documento de identidad (*)" id="dni_form" value="{{ old('dni') }}">
                                 </div>
 
                                 <div class="form-group">
@@ -167,7 +167,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="card-body">
                                 {!! $event->thematic !!}
                             </div>
@@ -246,7 +246,7 @@
                                 <input type="text" class="form-control" placeholder="Escriba su nombres y apellidos (*)" name="name" id="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Escriba su DNI (*)" name="dni" id="dni" value="{{ old('dni') }}">
+                                <input type="text" class="form-control" placeholder="N° de documento de identidad (*)" name="dni" id="dni" value="{{ old('dni') }}">
                             </div>
 
                             <div class="form-group">
