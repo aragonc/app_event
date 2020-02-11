@@ -1,17 +1,18 @@
 <!-- Modal Register Billings -->
-<div class="modal fade" id="features_create" tabindex="-1" role="dialog" aria-labelledby="features_create" aria-hidden="true">
+<input id="url" type="hidden" value="{{ url('admin/feature/') }}">
+<div class="modal fade" id="modal_features" tabindex="-1" role="dialog" aria-labelledby="features_create" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <form id="formFeature" class="form-horizontal" method="POST" >
+
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="features_modal">{{ __('Add feature') }}</h5>
+                    <h5 class="modal-title" id="modal-title">{{ __('Add feature') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
-                    {{ Form::hidden('event_id', '',['id' => 'event_id']) }}
+                    {!! Form::open(['id' => 'frmFeatures', 'files' => false]) !!}
 
                     <div class="form-group">
                         {{ Form::label('feature_title', 'Título de característica') }}
@@ -28,23 +29,17 @@
                         {{ Form::textarea('feature_content', null, ['class' => 'form-control ckeditor', 'id' => 'feature_content']) }}
                     </div>
 
+                    {{ Form::hidden('event_id', $event->id, ['id' => 'event_id', ]) }}
+                    {{ Form::hidden('feature_id', 0, ['id' => 'feature_id', ]) }}
 
-                   {{--
-                    <div class="form-group">
-                        {{ Form::label('business_name', 'Razón social') }}
-                        {{ Form::text('business_name', null, ['class' => 'form-control', 'id' => 'business_name', 'v-model' => 'billings.business_name']) }}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('fiscal_address', 'Dirección fiscal') }}
-                        {{ Form::text('fiscal_address', null, ['class' => 'form-control', 'id' => 'fiscal_address' , 'v-model' => 'billings.fiscal_address']) }}
-                    </div>--}}
+                    {!! Form::close() !!}
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-primary">{{ __('Save changes') }}</button>
+                    <button type="button"  class="btn btn-secondary" data-dismiss="modal">{{ __('Cerrar') }}</button>
+                    <button type="submit" id="btn-save" class="btn btn-primary">{{ __('Guardar') }}</button>
                 </div>
             </div>
-        </form>
+
     </div>
 </div>

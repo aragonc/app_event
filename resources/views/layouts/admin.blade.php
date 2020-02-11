@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="_token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -131,11 +132,11 @@
 
     </main>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{{ asset('js/popper.min.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
 <script src="{{ asset('vendor/sweetalert2/dist/sweetalert2.js') }}"></script>
 <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
-<script type="text/javascript">
-
-</script>
 @yield('scripts_footer')
 </body>
 </html>

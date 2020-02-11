@@ -35,4 +35,7 @@ class Event extends Model
     public function clients(){
         return $this->hasMany(People::class);
     }
+    public function features(){
+        return $this->hasMany(Feature::class);
+    }
 }

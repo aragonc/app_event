@@ -8,11 +8,11 @@ class Feature extends Model
 {
     protected $fillable = [
         'event_id',
-        'title',
-        'content',
-        'extra',
-        'visible',
-        'icon'
+        'feature_title',
+        'feature_content',
+        'feature_extra',
+        'feature_visible',
+        'feature_icon'
     ];
     public function event(){
         return $this->belongsTo(Event::class);
