@@ -101,7 +101,7 @@
             </div>
         </div>
 
-       {{--<div class="form-group">
+       <div class="form-group">
             {{ Form::label('thematic', 'Descripción del evento') }}
             {{ Form::textarea('thematic', null, ['class' => 'form-control ckeditor', 'id' => 'thematic']) }}
         </div>
@@ -114,7 +114,7 @@
             {{ Form::label('contact', 'Ficha contacto') }}
             {{ Form::textarea('contact', null, ['class' => 'form-control ckeditor', 'id' => 'contact']) }}
         </div>
---}}
+
 
         <div class="form-group">
             {{ Form::label('terms', 'Términos y condiciones') }}
