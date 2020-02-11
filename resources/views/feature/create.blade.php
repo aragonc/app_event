@@ -22,11 +22,14 @@
                     <div class="form-group">
                         {{ Form::label('feature_icon', 'Icono') }}
                         {{ Form::text('feature_icon', null, ['class' => 'form-control', 'id' => 'feature_icon']) }}
+                        <small>Deberás colocar la clase css del icono que deseas obtener, desde <a target="_blank" href="https://fontawesome.com/v4.7.0/icons/">FontAwesome v4.7</a>
+                            ejemplo: <strong>"fa-envelope-open"</strong> que trae al icono <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                        </small>
                     </div>
 
                     <div class="form-group">
                         {{ Form::label('feature_content', 'Descripción') }}
-                        {{ Form::textarea('feature_content', null, ['class' => 'form-control ckeditor', 'id' => 'feature_content']) }}
+                        {{ Form::textarea('feature_content', null, ['class' => 'form-control', 'id' => 'feature_content']) }}
                     </div>
 
                     {{ Form::hidden('event_id', $event->id, ['id' => 'event_id', ]) }}

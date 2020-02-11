@@ -154,6 +154,7 @@
     <div class="mask movil-grid"></div>
     <div class="content-flex container">
         <div class="column-a">
+            {{ dump($event->features) }}
             <div class="event">
                 <div class="accordion card-accordion" id="accordionExample">
                     @if($event->thematic)
@@ -173,7 +174,7 @@
                         </div>
                     </div>
                     @endif
-                    @if($event->schedule)
+                    {{--@if($event->schedule)
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
@@ -208,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    @endif
+                    @endif--}}
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="feature-tab">
             <div class="add-feature">
-                <button type="button" id="btn_add" class="btn btn-block btn-success" disabled>
+                <button type="button" id="btn_add" class="btn btn-block btn-success" >
                     <i class="fas fa-plus"></i> {{ __('Añadir característica') }}
                 </button>
             </div>
@@ -49,7 +49,7 @@
                         <tr id="feature_{{$feature->id}}" class="active">
                             <td>{{$feature->id}}</td>
                             <td>{{$feature->feature_title}}</td>
-                            <td>{{$feature->feature_icon}}</td>
+                            <td><i class="fa {{$feature->feature_icon}} fa-lg" aria-hidden="true"></i></td>
                             <td>{{$feature->updated_at}}</td>
                             <td width="35%">
                                 <button class="btn btn-warning btn-detail open_modal" value="{{$feature->id}}">

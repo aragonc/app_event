@@ -1,11 +1,15 @@
+CKEDITOR.replace( 'feature_content', { } );
+
+function textCKEditor()
+{
+    var editorText = CKEDITOR.instances.feature_content.getData();
+    return editorText;
+}
 
 $(document).ready(function(){
 
     //get base URL *********************
     var url = $('#url').val();
-
-    editores = CKEDITOR.instances;
-    console.log(editores);
 
     //display modal form for creating new product *********************
     $('#btn_add').click(function(){
@@ -13,9 +17,8 @@ $(document).ready(function(){
         $('#frmFeatures').trigger("reset");
         $('#modal_features').modal('show');
         $('#modal-title').html('Agregar característica');
+        CKEDITOR.instances.feature_content.setData('');
     });
-
-
 
     //display modal form for product EDIT ***************************
     $(document).on('click','.open_modal',function(){
@@ -30,7 +33,7 @@ $(document).ready(function(){
                 $('#feature_id').val(data.id);
                 $('#feature_title').val(data.feature_title);
                 $('#feature_icon').val(data.feature_icon);
-                $('#feature_content').val(data.feature_content);
+                CKEDITOR.instances.feature_content.setData(data.feature_content);
                 $('#event_id').val(data.event_id);
                 $('#btn-save').val("update");
                 $('#modal_features').modal('show');
@@ -52,12 +55,13 @@ $(document).ready(function(){
             }
         });
 
+        var contentEditor = textCKEditor();
 
         e.preventDefault();
         var formData = {
             feature_title: $('#feature_title').val(),
             feature_icon: $('#feature_icon').val(),
-            feature_content: CKEDITOR.instances['#feature_content'].getData(),
+            feature_content: contentEditor,
             feature_extra: '',
             feature_visible:1,
             event_id: $('#event_id').val(),
