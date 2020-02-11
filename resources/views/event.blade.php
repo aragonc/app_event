@@ -154,9 +154,28 @@
     <div class="mask movil-grid"></div>
     <div class="content-flex container">
         <div class="column-a">
-            {{ dump($event->features) }}
             <div class="event">
                 <div class="accordion card-accordion" id="accordionExample">
+                    @if($event->features)
+                        @foreach($event->features as $feature)
+                        <div class="card">
+                            <div class="card-header" id="heading_{{ $$feature->id }}">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_{{ $$feature->id }}" aria-expanded="true" aria-controls="collapse_{{ $$feature->id }}">
+                                        <i class="fa {{ $feature->feature_icon }} fa-2x fa-fw" aria-hidden="true"></i>
+                                        {{ $feature->feature_title }}
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse_{{ $$feature->id }}" class="collapse" aria-labelledby="heading_{{ $$feature->id }}" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {!! $feature->feature_content !!}
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
+                    
                     @if($event->thematic)
                     <div class="card">
                         <div class="card-header" id="headingOne">
@@ -174,7 +193,8 @@
                         </div>
                     </div>
                     @endif
-                    {{--@if($event->schedule)
+                    
+                    @if($event->schedule)
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
@@ -209,7 +229,9 @@
                             </div>
                         </div>
                     </div>
-                    @endif--}}
+                    @endif
+                    
+                    
                 </div>
             </div>
         </div>
