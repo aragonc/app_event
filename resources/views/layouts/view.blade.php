@@ -20,6 +20,8 @@
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootbox/dist/bootbox.min.js') }}" defer></script>
     <script src="{{ asset('vendor/bootbox/dist/bootbox.locales.min.js') }}" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function(){
             $('#scroll_bottom').click(function(){
@@ -27,6 +29,7 @@
                     scrollTop : $(window).height()
                 },1200);
             });
+            $('.country_select').select2();
         });
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

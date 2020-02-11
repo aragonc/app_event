@@ -59,8 +59,8 @@
                     @endif
                     @if($event->contact_email)
                     <span class="space">
-
-                        <i class="fa fa-phone" aria-hidden="true"></i> {{ $event->contact_phone }}
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        {{ $event->contact_phone }}
                     </span>
                     @endif
                 </div>
@@ -113,7 +113,6 @@
 
                                 <div class="form-group">
                                     <select class="form-control country_select" name="country" id="country_form">
-                                        <option>--- Selecciona tu pais ----</option>
                                     </select>
                                 </div>
 
@@ -251,7 +250,6 @@
 
                             <div class="form-group">
                                 <select class="form-control country_select" name="country" id="country">
-                                    <option>--- Selecciona tu pais ----</option>
                                 </select>
                             </div>
 
@@ -296,7 +294,7 @@
     <script>
         $(document).ready(function(){
             $.getJSON('{{ asset('js/countrys.json') }}', function(data){
-               var out = '<option>---- Selecciona un país ----<option>';
+               var out = '';
                for(var i = 0; i < data.length; i++) {
                     out += '<option value="'+data[i]+'">' +
                         data[i]
