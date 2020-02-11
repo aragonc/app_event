@@ -188,7 +188,7 @@
             <div class="card card-image">
                 <div class="card-body">
                     <div class="image-event">
-                        <img src="{{ Storage::url($event->image_movil) }}"  class="img-fluid"/>
+                        <img width="130px" src="{{ Storage::url($event->image_movil) }}"  class="img-fluid"/>
                     </div>
                     <div class="form-group form-check check-delete">
                         <input name="delete_movil" type="checkbox" value="true" class="form-check-input" id="delete_image_movil">
