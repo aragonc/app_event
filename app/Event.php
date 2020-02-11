@@ -19,6 +19,7 @@ class Event extends Model
         'contact_phone',
         'image_top',
         'image_bottom',
+        'image_movil', 
         'primary_color',
         'secondary_color',
         'embed',

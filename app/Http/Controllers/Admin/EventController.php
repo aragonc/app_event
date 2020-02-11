@@ -50,6 +50,7 @@ class EventController extends Controller
         $pathFile = null;
         $pathFileTwo = null;
         $pathMedia = null;
+        $pathMovil = null;
 
         //Comprobamos que enviamos la imagen y que no este vacia
         if($request->hasFile('image_top')){
@@ -90,12 +91,26 @@ class EventController extends Controller
                 $pathMedia = $file3->storeAs('public/upload/event',$name3);
             }
         }
+        
+        if($request->hasFile('image_movil')){
+            $file4 = $request->file('image_movil');
+
+            //comprobamos que la imagen tenga el tamaño correcto 400 x 950
+            $image4 = Image::make($file4->getRealPath());
+            if($image4->getWidth() != '400' and $image4->getHeight() !='950'){
+                return back()->with('error','La imagen debe ser de 400 x 950 pixeles');
+            } else {
+                $name4 = time().'_event_'.$file4->getClientOriginalName();
+                $pathMovil = $file4->storeAs('public/upload/event',$name4);
+            }
+        }
 
         //Creamos el evento y agregamos la imagen al registro
         $event = Event::create($request->all());
         $event->fill(['image_top' => $pathFile])->save();
         $event->fill(['image_bottom' => $pathFileTwo])->save();
         $event->fill(['media' => $pathMedia])->save();
+        $event->fill(['image_movil' => $pathMovil])->save();
 
         return redirect()->route('event.edit', $event->id)->with('info','El evento fue creado con éxito');
 
@@ -137,6 +152,7 @@ class EventController extends Controller
         $pathFile = null;
         $pathFile2 = null;
         $pathFile3 = null;
+        $pathFile4 = null;
         $message =  null;
 
         $event = Event::find($id);
@@ -145,9 +161,10 @@ class EventController extends Controller
         $deleteImage1 = $request->has('delete_top');
         $deleteImage2 = $request->has('delete_bottom');
         $deleteImage3 = $request->has('delete_media');
+        $deleteImage4 = $request->has('delete_movil');
 
-        //Eliminamos la imagen superior o inferior
-        $deleted1 = $deleted2 = $deleted3 = false;
+        //Eliminamos la imagen superior , inferior y movil
+        $deleted1 = $deleted2 = $deleted3 = $deleted4 = false;
 
         if($deleteImage1){
             $fullPath1 = $event->image_top;
@@ -172,9 +189,17 @@ class EventController extends Controller
                 $event->fill(['media' => $pathFile3])->save();
             }
         }
+        
+        if($deleteImage4){
+            $fullPath4 = $event->image_movil;
+            $deleted4 = Storage::delete($fullPath4);
+            if($deleted4){
+                $event->fill(['image_movil' => $pathFile4])->save();
+            }
+        }
 
 
-        if($deleted1 or $deleted2 or $deleted3){
+        if($deleted1 or $deleted2 or $deleted3 or $deleted4){
             return back()->with('info','La imagen fue eliminada');
         }
 
@@ -219,6 +244,23 @@ class EventController extends Controller
                 //$event->fill($request->all())->save();
                 $event->fill(['media' => $pathFile3])->save();
             }
+        }elseif($request->hasFile('image_movil')){
+              
+            $file4 = $request->file('image_movil');
+
+            // Comprobamos que tenga el tamaño correcto
+            $image4 = Image::make($file4->getRealPath());
+            if($image4->getWidth() != '400' and $image4->getHeight() !='900'){
+                return back()->with('error','La imagen debe ser de 400 x 900 pixeles');
+            } else {
+                $name4 = time().'_event_'.$file4->getClientOriginalName();
+                $pathFile4 = $file4->storeAs('public/upload/event',$name4);
+
+                //$event->fill($request->all())->save();
+                $event->fill(['image_movil' => $pathFile4])->save();
+            }
+            
+            
         }else{
             $event->fill($request->all())->save();
         }

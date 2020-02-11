@@ -182,6 +182,29 @@
                 <small class="form-text text-muted">La imagen debe ser de 1440 x 1024 pixeles.</small>
             </div>
         @endif
+        
+        
+        @if(isset($event->image_movil))
+            <div class="card card-image">
+                <div class="card-body">
+                    <div class="image-event">
+                        <img src="{{ Storage::url($event->image_movil) }}"  class="img-fluid"/>
+                    </div>
+                    <div class="form-group form-check check-delete">
+                        <input name="delete_movil" type="checkbox" value="true" class="form-check-input" id="delete_image_movil">
+                        <label class="form-check-label" for="delete_image_movil">Eliminar esta imagen</label>
+                    </div>
+                </div>
+            </div>
+        @else
+            <div class="form-group">
+                {{ Form::label('image_movil', 'Imagen para movil') }}
+                <div class="custom-file">
+                    {{ Form::file('image_movil', ['class' => '', 'id' => 'image_movil']) }}
+                </div>
+                <small class="form-text text-muted">La imagen debe ser de 400 x 900 pixeles.</small>
+            </div>
+        @endif
 
         @if(isset($event->media))
             <div class="card card-image">
