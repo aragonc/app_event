@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Email;
 use App\Event;
+use App\Mail\MessageNotification;
 use App\Mail\MessageRegister;
 use App\People;
 use App\Http\Controllers\Controller;
@@ -64,7 +65,9 @@ class PeopleController extends Controller
             $people = People::create($request->all());
             $event = Event::find($people->event_id);
             $email = $people->email;
+            $emailNotification = $event->contact_email;
             Mail::to($email)->send(new MessageRegister($people,$event));
+            Mail::to($emailNotification)->send(new MessageNotification($people,$event));
             session()->put('notify','Email enviado');
 
             return redirect()->back();
