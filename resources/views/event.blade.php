@@ -46,6 +46,16 @@
                 background-size: cover;
                 background-image: url('{{ Storage::url($event->image_movil) }}');
             }
+            .event .direction{
+                color: {{ $event->secondary_color }};
+                background: transparent;
+                padding: 0;
+            }
+            .event .date{
+                color: {{ $event->primary_color }};
+                background: transparent;
+                padding: 10px 0;
+            }
         }
     </style>
 @endsection
