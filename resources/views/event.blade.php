@@ -159,15 +159,15 @@
                     @if($event->features)
                         @foreach($event->features as $feature)
                         <div class="card">
-                            <div class="card-header" id="heading_{{ $$feature->id }}">
+                            <div class="card-header" id="heading_{{ $feature->id }}">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_{{ $$feature->id }}" aria-expanded="true" aria-controls="collapse_{{ $$feature->id }}">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_{{ $feature->id }}" aria-expanded="true" aria-controls="collapse_{{ $feature->id }}">
                                         <i class="fa {{ $feature->feature_icon }} fa-2x fa-fw" aria-hidden="true"></i>
                                         {{ $feature->feature_title }}
                                     </button>
                                 </h2>
                             </div>
-                            <div id="collapse_{{ $$feature->id }}" class="collapse" aria-labelledby="heading_{{ $$feature->id }}" data-parent="#accordionExample">
+                            <div id="collapse_{{ $feature->id }}" class="collapse" aria-labelledby="heading_{{ $feature->id }}" data-parent="#accordionExample">
                                 <div class="card-body">
                                     {!! $feature->feature_content !!}
                                 </div>
@@ -175,62 +175,6 @@
                         </div>
                         @endforeach
                     @endif
-                    
-                    @if($event->thematic)
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="fa fa-file-text-o fa-2x fa-fw" aria-hidden="true"></i>
-                                    Presentación
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
-                                {!! $event->thematic !!}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    
-                    @if($event->schedule)
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="fa fa-clock-o fa-2x fa-fw" aria-hidden="true"></i>
-                                    Horario
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body">
-                                {!! $event->schedule !!}
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-
-                    @if($event->contact)
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="fa fa-envelope-o fa-2x fa-fw" aria-hidden="true"></i>
-                                    Contacto
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <div class="card-body">
-                                {!! $event->contact !!}
-
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    
                     
                 </div>
             </div>
@@ -317,7 +261,7 @@
     <script>
         $(document).ready(function(){
             $.getJSON('{{ asset('js/countrys.json') }}', function(data){
-               var out = '';
+                var out = '<option>--- SELECCIONA UN PAIS ---<option>';
                for(var i = 0; i < data.length; i++) {
                     out += '<option value="'+data[i]+'">' +
                         data[i]
