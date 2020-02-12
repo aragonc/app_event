@@ -101,21 +101,6 @@
             </div>
         </div>
 
-       <div class="form-group">
-            {{ Form::label('thematic', 'Descripción del evento') }}
-            {{ Form::textarea('thematic', null, ['class' => 'form-control ckeditor', 'id' => 'thematic']) }}
-        </div>
-        <div class="form-group">
-            {{ Form::label('schedule', 'Agenda/Horario') }}
-            {{ Form::textarea('schedule', null, ['class' => 'form-control ckeditor', 'id' => 'schedule']) }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('contact', 'Ficha contacto') }}
-            {{ Form::textarea('contact', null, ['class' => 'form-control ckeditor', 'id' => 'contact']) }}
-        </div>
-
-
         <div class="form-group">
             {{ Form::label('terms', 'Términos y condiciones') }}
             {{ Form::textarea('terms', null, ['class' => 'form-control ckeditor', 'id' => 'terms']) }}
