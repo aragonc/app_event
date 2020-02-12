@@ -17,8 +17,6 @@
 
     {!! $content !!}
 
-    <p style="font-style: italic">Por favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
-
     <table style="padding:0; width: 100%">
         <tr>
             <td style="text-align: center;">
