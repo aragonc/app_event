@@ -278,9 +278,17 @@ footer{
         width: auto;
     }
     .event .contact{
-        margin-bottom: 20vh;
+        margin-bottom: 15vh;
         font-size: 14px;
         margin-top: 5px;
+        position: absolute;
+        z-index: 99;
+        bottom: 0;
+        width: 100%;
+        background: #0000008f;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
     }
     header{
         padding: 0;
