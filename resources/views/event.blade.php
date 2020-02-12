@@ -276,7 +276,7 @@
     <script>
         $(document).ready(function(){
             $.getJSON('{{ asset('js/countrys.json') }}', function(data){
-                var out = '<option>--- SELECCIONA UN PAIS ---<option>';
+                var out = '<option>Selecciona un país<option>';
                for(var i = 0; i < data.length; i++) {
                     out += '<option value="'+data[i]+'">' +
                         data[i]
