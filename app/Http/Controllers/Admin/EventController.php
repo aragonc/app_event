@@ -97,8 +97,8 @@ class EventController extends Controller
 
             //comprobamos que la imagen tenga el tamaño correcto 400 x 950
             $image4 = Image::make($file4->getRealPath());
-            if($image4->getWidth() != '400' and $image4->getHeight() !='950'){
-                return back()->with('error','La imagen debe ser de 400 x 950 pixeles');
+            if($image4->getWidth() != '420' and $image4->getHeight() !='750'){
+                return back()->with('error','La imagen debe ser de 420 x 750 pixeles');
             } else {
                 $name4 = time().'_event_'.$file4->getClientOriginalName();
                 $pathMovil = $file4->storeAs('public/upload/event',$name4);
@@ -250,8 +250,8 @@ class EventController extends Controller
 
             // Comprobamos que tenga el tamaño correcto
             $image4 = Image::make($file4->getRealPath());
-            if($image4->getWidth() != '400' and $image4->getHeight() !='900'){
-                return back()->with('error','La imagen debe ser de 400 x 900 pixeles');
+            if($image4->getWidth() != '420' and $image4->getHeight() !='750'){
+                return back()->with('error','La imagen debe ser de 420 x 750 pixeles');
             } else {
                 $name4 = time().'_event_'.$file4->getClientOriginalName();
                 $pathFile4 = $file4->storeAs('public/upload/event',$name4);
