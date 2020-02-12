@@ -64,6 +64,7 @@
                 {{--<h3 class="subtitle">VI Congreso Nacional</h3>--}}
                 <h1 class="title">{{ $event->title }}</h1>
                 <div class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ $event->date }}</div>
+                <span class="linear"></span>
                 <div class="direction"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $event->place }}</div>
                 <div class="contact">
                     @if($event->contact_email)
