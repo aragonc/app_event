@@ -266,16 +266,19 @@ footer{
     }
     .event .direction{
         font-size: 18px;
-        width: auto;
         font-weight: bold;
-        display: block;
+        width: auto;
+        padding: 5px 10px;
+        margin-top: 5px;
+        border-radius: 5px;
     }
     .event .date {
         font-size: 18px;
         text-align: left;
         font-weight: bold;
-        display: block;
         width: auto;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
     .event .contact{
         margin-bottom: 8vh;
