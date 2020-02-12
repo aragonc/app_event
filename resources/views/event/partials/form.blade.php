@@ -187,7 +187,7 @@
                 <div class="custom-file">
                     {{ Form::file('image_movil', ['class' => '', 'id' => 'image_movil']) }}
                 </div>
-                <small class="form-text text-muted">La imagen debe ser de 400 x 900 pixeles.</small>
+                <small class="form-text text-muted">La imagen debe ser de 420 x 750 pixeles.</small>
             </div>
         @endif
 
