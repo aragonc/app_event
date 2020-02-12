@@ -12,11 +12,11 @@
         </tr>
     </table>
 
-    <h3>Gracias por solicitar información.</h3>
-    <p>Sea bienvenido(a): <strong>{{ $name }}</strong> </p>
+    <p>Hola: <strong>{{ $name }}</strong> </p>
 
     {!! $content !!}
 
+    @if($school)
     <table style="padding:0; width: 100%">
         <tr>
             <td style="text-align: center;">
@@ -24,6 +24,7 @@
             </td>
         </tr>
     </table>
+    @endif
 
     <!-- FIN DE CONTENIDO -->
 @endsection

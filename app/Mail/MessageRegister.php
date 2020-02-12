@@ -36,7 +36,6 @@ class MessageRegister extends Mailable
     public function build()
     {
         return $this->view('emails.message-register')
-                    ->from($this->event->contact_email,"Grupo Excelencia")
                     ->with([
                         'name' => $this->people->name,
                         'event_title' => $this->event->title,
