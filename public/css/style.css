@@ -10,11 +10,6 @@ header {
     padding: 10px 0;
     background-color: #000000;
 }
-.banner{
-    position: relative;
-    background-size: cover;
-    background-position: center;
-}
 .mask{
     position: absolute;
     width: 100%;
@@ -245,7 +240,7 @@ footer{
 @media (max-width: 480px) {
     .mask{
         height: 100%;
-        background-color: rgba(0, 34, 97, 0.4);
+        background-color: rgba(0, 34, 97, 0.2);
         background-image: none;
     }
     .event{
@@ -287,11 +282,7 @@ footer{
     .form-register{
         padding: 0;
     }
-    .banner{
-        background-position: -100px 0;
-        background-repeat: no-repeat;
-        background-size: auto;
-    }
+
     #section-1 .column-b{
         display: none;
     }

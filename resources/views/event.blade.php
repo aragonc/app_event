@@ -33,6 +33,20 @@
         .terms a{
             color: {{ $event->secondary_color }};
         }
+        .banner{
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-image: url('{{ Storage::url($event->image_top) }}');
+        }
+        @media (max-width: 480px) {
+            .banner{
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('{{ Storage::url($event->image_movil) }}');
+            }
+        }
     </style>
 @endsection
 
@@ -42,7 +56,7 @@
 
 @section('content')
 
-<section class="banner" id="section-1" style="background-image: url('{{ Storage::url($event->image_top) }}')">
+<section class="banner" id="section-1">
     <div class="mask"></div>
     <div class="content-flex container">
         <div class="column-a">
