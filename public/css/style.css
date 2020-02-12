@@ -279,7 +279,7 @@ footer{
         width: auto;
         padding: 5px 10px;
         border-radius: 5px;
-        display: initial;
+        display: inline-block;
     }
     .event .contact{
         margin-bottom: 8vh;
