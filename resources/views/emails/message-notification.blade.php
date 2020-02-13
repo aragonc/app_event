@@ -4,12 +4,9 @@
 @section('content')
     <!-- CONTENIDO -->
 
-
     <h3>Notificación de inscripción.</h3>
     <p>El sr(a): <strong>{{ $name }}</strong> </p>
     <p>Esta solicitando informes para el evento: </p>
-
-    <p style="font-style: italic">Por favor no responder a este correo, en breve nos estaremos comunicando contigo</p>
 
     <table style="padding:0; width: 100%">
         <tr>

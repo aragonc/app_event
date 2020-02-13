@@ -42,7 +42,7 @@ class MessageNotification extends Mailable
                         'email' => $this->people->email,
                         'dni' => $this->people->dni,
                         'country' => $this->people->country,
-                        'phone' => $this->event->contact_phone,
+                        'phone' => $this->people->phone,
                         'background' => $this->event->email_color
                     ]);
     }
