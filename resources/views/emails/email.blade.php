@@ -33,7 +33,7 @@
                             </table>
                         </td>
                     </tr>
-                    <tr>
+                    {{--<tr>
                         <td>
                             <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 20%; margin:auto;">
                                 <tr>
@@ -50,7 +50,7 @@
                                 </tr>
                             </table>
                         </td>
-                    </tr>
+                    </tr>--}}
 
                     <!-- END MAIN CONTENT AREA -->
                 </table>
@@ -64,11 +64,11 @@
                                 <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">© Todos los Derechos Reservados 2019 Grupo Excellentia</span>
                             </td>
                         </tr>
-                        <tr>
+                        {{--<tr>
                             <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
                                 Distribuido por <a href="https://tunqui.pe" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Tunqui.pe</a>.
                             </td>
-                        </tr>
+                        </tr>--}}
                     </table>
                 </div>
                 <!-- END FOOTER -->
